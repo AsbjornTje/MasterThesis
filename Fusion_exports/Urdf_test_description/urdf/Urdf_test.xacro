@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<robot name="Urdf_test" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find Urdf_test_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find Urdf_test_description)/urdf/Urdf_test.trans" />
+<xacro:include filename="$(find Urdf_test_description)/urdf/Urdf_test.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-2.660863465127029e-18 -5.321726930254058e-18 0.01" rpy="0 0 0"/>
+    <mass value="0.2096221977872324"/>
+    <inertia ixx="2.9e-05" iyy="2.9e-05" izz="4.5e-05" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Urdf_test_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Urdf_test_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component2_1">
+  <inertial>
+    <origin xyz="0.0 -8.881784197001253e-18 0.017499999999999998" rpy="0 0 0"/>
+    <mass value="0.5547031509861376"/>
+    <inertia ixx="0.000146" iyy="0.000146" izz="0.000178" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Urdf_test_description)/meshes/Component2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Urdf_test_description)/meshes/Component2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 1" type="continuous">
+  <origin xyz="0.0 0.0 0.02" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component2_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+</robot>
