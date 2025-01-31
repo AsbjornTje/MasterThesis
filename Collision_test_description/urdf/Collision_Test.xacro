@@ -1,0 +1,662 @@
+<?xml version="1.0" ?>
+<robot name="Collision_Test" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find Collision_Test_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find Collision_Test_description)/urdf/Collision_Test.trans" />
+<xacro:include filename="$(find Collision_Test_description)/urdf/Collision_Test.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0 0.0 0.005" rpy="0 0 0"/>
+    <mass value="0.28259999999999996"/>
+    <inertia ixx="8.7e-05" iyy="8.7e-05" izz="0.00017" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wagon_slider_1">
+  <inertial>
+    <origin xyz="0.0 0.0 -0.005" rpy="0 0 0"/>
+    <mass value="0.28259999999999996"/>
+    <inertia ixx="8.7e-05" iyy="8.7e-05" izz="0.00017" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Wagon_slider_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Wagon_slider_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="J0_roll_v2_1">
+  <inertial>
+    <origin xyz="0.023008276072824064 0.003550325816156279 -0.09487979527733777" rpy="0 0 0"/>
+    <mass value="3.385455040389694"/>
+    <inertia ixx="0.012107" iyy="0.019385" izz="0.017884" ixy="-0.00044" iyz="8.5e-05" ixz="0.001284"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/J0_roll_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/J0_roll_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="J1_pitch_v1_1">
+  <inertial>
+    <origin xyz="-0.017302455568921918 0.04088078699653103 -0.6424628838907239" rpy="0 0 0"/>
+    <mass value="9.048050314590123"/>
+    <inertia ixx="1.548616" iyy="1.549018" izz="0.013753" ixy="0.000578" iyz="0.033627" ixz="-0.01746"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0745 -0.0 0.118" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/J1_pitch_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0745 -0.0 0.118" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/J1_pitch_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="J2_prismatic_v2_1">
+  <inertial>
+    <origin xyz="-0.07406159895356806 0.010522752846601393 0.7879171757710473" rpy="0 0 0"/>
+    <mass value="0.3768877683358005"/>
+    <inertia ixx="0.000944" iyy="0.001522" izz="0.000653" ixy="-1.1e-05" iyz="-2.3e-05" ixz="0.000241"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.0203 1.331" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/J2_prismatic_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.0203 1.331" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/J2_prismatic_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="80I_v2_1">
+  <inertial>
+    <origin xyz="0.030001344585237892 -0.019144766084866288 -0.6246457094660587" rpy="0 0 0"/>
+    <mass value="1.149201511225191"/>
+    <inertia ixx="0.001539" iyy="0.001133" izz="0.001539" ixy="0.0" iyz="-0.000462" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.0158 0.015" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/80I_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.0158 0.015" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/80I_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="80mm_Connector_v1_1">
+  <inertial>
+    <origin xyz="-3.74353326115795e-15 -8.28503932126523e-15 -0.00499999999998102" rpy="0 0 0"/>
+    <mass value="0.0891066189600163"/>
+    <inertia ixx="7e-05" iyy="7e-05" izz="0.000128" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.03 0.0579 0.6843" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/80mm_Connector_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.03 0.0579 0.6843" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/80mm_Connector_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Ph17_v3_1">
+  <inertial>
+    <origin xyz="-1.0550793849706253e-08 -7.126061393747385e-08 -0.051365500099588846" rpy="0 0 0"/>
+    <mass value="0.20135347576384413"/>
+    <inertia ixx="0.000332" iyy="0.000332" izz="0.000349" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.03 0.0579 0.6943" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Ph17_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.03 0.0579 0.6943" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Ph17_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Ph17_v5_1">
+  <inertial>
+    <origin xyz="3.271688475692258e-14 -8.298917109073045e-15 -0.00854777892567582" rpy="0 0 0"/>
+    <mass value="0.13121844326270563"/>
+    <inertia ixx="8.4e-05" iyy="8.4e-05" izz="0.000158" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.03 0.0579 0.7853" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Ph17_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.03 0.0579 0.7853" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Ph17_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="80mm_Connector_v1_2">
+  <inertial>
+    <origin xyz="3.514549762329011e-15 -8.298917109073045e-15 -0.004999999999979798" rpy="0 0 0"/>
+    <mass value="0.0891066189600163"/>
+    <inertia ixx="7e-05" iyy="7e-05" izz="0.000128" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.03 0.0579 0.8103" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/80mm_Connector_v1_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.03 0.0579 0.8103" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/80mm_Connector_v1_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="80I_v7_1">
+  <inertial>
+    <origin xyz="-0.012365261568446733 2.243814333433014e-07 -0.06382447270362279" rpy="0 0 0"/>
+    <mass value="0.5330043429768883"/>
+    <inertia ixx="0.000818" iyy="0.001011" izz="0.000954" ixy="-0.0" iyz="-0.0" ixz="-3e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.03 0.0579 0.8203" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/80I_v7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.03 0.0579 0.8203" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/80I_v7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="80I_v1_1">
+  <inertial>
+    <origin xyz="0.029767152018120482 1.822415825886159e-08 -0.012391377367242495" rpy="0 0 0"/>
+    <mass value="0.4000329517221655"/>
+    <inertia ixx="0.000677" iyy="0.000606" izz="0.000511" ixy="0.0" iyz="0.0" ixz="-5e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0894 0.0579 0.8873" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/80I_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0894 0.0579 0.8873" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/80I_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="70mm_Connector_v8_1">
+  <inertial>
+    <origin xyz="6.7584826624056404e-15 -1.0783041126671833e-14 -0.004999999999977689" rpy="0 0 0"/>
+    <mass value="0.07703965560203016"/>
+    <inertia ixx="4.7e-05" iyy="4.7e-05" izz="8.4e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1224 0.0579 0.9593" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/70mm_Connector_v8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1224 0.0579 0.9593" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/70mm_Connector_v8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Ph14_v3_1">
+  <inertial>
+    <origin xyz="1.6619796830430467e-08 8.331582264375914e-08 -0.04813143943643916" rpy="0 0 0"/>
+    <mass value="0.1638271807069812"/>
+    <inertia ixx="0.000228" iyy="0.000228" izz="0.000223" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1224 0.0579 0.9693" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Ph14_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1224 0.0579 0.9693" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Ph14_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Ph_14_v5_1">
+  <inertial>
+    <origin xyz="4.393707619954057e-14 -1.0762224444960111e-14 -0.008766306081507969" rpy="0 0 0"/>
+    <mass value="0.10370277433442163"/>
+    <inertia ixx="5.4e-05" iyy="5.4e-05" izz="0.0001" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1224 0.0579 1.0566" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Ph_14_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1224 0.0579 1.0566" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Ph_14_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="70mm_Short_v1_1">
+  <inertial>
+    <origin xyz="-3.321678432310904e-09 -2.2607456582474095e-07 -0.045000161106587555" rpy="0 0 0"/>
+    <mass value="0.17587532462233882"/>
+    <inertia ixx="0.000298" iyy="0.000298" izz="0.000159" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1224 0.0579 1.0816" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/70mm_Short_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1224 0.0579 1.0816" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/70mm_Short_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="70I_v3_1">
+  <inertial>
+    <origin xyz="-0.012050045126470288 -3.156523237235476e-08 -0.058295082702562784" rpy="0 0 0"/>
+    <mass value="0.4477774692111262"/>
+    <inertia ixx="0.000567" iyy="0.000757" izz="0.000719" ixy="-0.0" iyz="-0.0" ixz="-2.7e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1224 0.0579 1.1716" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/70I_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1224 0.0579 1.1716" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/70I_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="70I_v1_1">
+  <inertial>
+    <origin xyz="0.031033426529089775 1.120306942353766e-08 -0.012730026181500875" rpy="0 0 0"/>
+    <mass value="0.32648784611582127"/>
+    <inertia ixx="0.000475" iyy="0.000459" izz="0.000391" ixy="0.0" iyz="0.0" ixz="-3e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1786 0.0579 1.2336" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/70I_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1786 0.0579 1.2336" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/70I_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="70mm_Connector_v8__1__1">
+  <inertial>
+    <origin xyz="-8.215650382226158e-15 -1.4009626791988694e-14 -0.004999999999985016" rpy="0 0 0"/>
+    <mass value="0.07703965560203016"/>
+    <inertia ixx="4.7e-05" iyy="4.7e-05" izz="8.4e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.2116 0.0579 1.3006" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/70mm_Connector_v8__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.2116 0.0579 1.3006" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/70mm_Connector_v8__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Ph14_v3__1__1">
+  <inertial>
+    <origin xyz="1.6619796067152137e-08 8.33158193894179e-08 -0.048131439436446044" rpy="0 0 0"/>
+    <mass value="0.1638271807069812"/>
+    <inertia ixx="0.000228" iyy="0.000228" izz="0.000223" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.2116 0.0579 1.3106" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Ph14_v3__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.2116 0.0579 1.3106" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Ph14_v3__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Ph_14_v5__1__1">
+  <inertial>
+    <origin xyz="5.787037515858628e-14 -1.404432126150823e-14 -0.008766306081513964" rpy="0 0 0"/>
+    <mass value="0.10370277433442163"/>
+    <inertia ixx="5.4e-05" iyy="5.4e-05" izz="0.0001" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.2116 0.0579 1.3979" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Ph_14_v5__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.2116 0.0579 1.3979" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Ph_14_v5__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="70mm_Short_v1__1__1">
+  <inertial>
+    <origin xyz="-3.3216588368745192e-09 -2.2607456915541002e-07 -0.04500016110659333" rpy="0 0 0"/>
+    <mass value="0.17587532462233882"/>
+    <inertia ixx="0.000298" iyy="0.000298" izz="0.000159" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.2116 0.0579 1.4229" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/70mm_Short_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.2116 0.0579 1.4229" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/70mm_Short_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Ph11_v5_1">
+  <inertial>
+    <origin xyz="1.6415640103684126e-05 0.0005305576131625425 -0.058467447799470884" rpy="0 0 0"/>
+    <mass value="0.1312830342144168"/>
+    <inertia ixx="0.00031" iyy="0.000307" izz="3.9e-05" ixy="0.0" iyz="-2e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.2116 0.0579 1.5249" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Ph11_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.2116 0.0579 1.5249" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Ph11_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Tool_1">
+  <inertial>
+    <origin xyz="2.0095036745715333e-14 -1.4550860516493458e-14 -0.0009999999999845688" rpy="0 0 0"/>
+    <mass value="0.0014992812147517289"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.2116 0.0579 1.7039" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Tool_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.2116 0.0579 1.7039" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Collision_Test_description)/meshes/Tool_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Slider 1" type="prismatic">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Wagon_slider_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+  <limit upper="0.0" lower="-14.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Revolute 2" type="revolute">
+  <origin xyz="0.0 0.0 -0.01" rpy="0 0 0"/>
+  <parent link="Wagon_slider_1"/>
+  <child link="J0_roll_v2_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+  <limit upper="1.745329" lower="-1.745329" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Revolute 3" type="revolute">
+  <origin xyz="-0.0745 0.0 -0.108" rpy="0 0 0"/>
+  <parent link="J0_roll_v2_1"/>
+  <child link="J1_pitch_v1_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+  <limit upper="1.396263" lower="-1.396263" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Slider 6" type="prismatic">
+  <origin xyz="0.0745 -0.0203 -1.213" rpy="0 0 0"/>
+  <parent link="J1_pitch_v1_1"/>
+  <child link="J2_prismatic_v2_1"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+  <limit upper="0.0" lower="-0.72" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rigid 7" type="fixed">
+  <origin xyz="0.0 0.0045 1.316" rpy="0 0 0"/>
+  <parent link="J2_prismatic_v2_1"/>
+  <child link="80I_v2_1"/>
+</joint>
+
+<joint name="Rigid 8" type="fixed">
+  <origin xyz="0.03 -0.0421 -0.6693" rpy="0 0 0"/>
+  <parent link="80I_v2_1"/>
+  <child link="80mm_Connector_v1_1"/>
+</joint>
+
+<joint name="Rigid 9" type="fixed">
+  <origin xyz="0.0 0.0 -0.01" rpy="0 0 0"/>
+  <parent link="80mm_Connector_v1_1"/>
+  <child link="Ph17_v3_1"/>
+</joint>
+
+<joint name="Revolute 10" type="continuous">
+  <origin xyz="0.0 0.0 -0.091" rpy="0 0 0"/>
+  <parent link="Ph17_v3_1"/>
+  <child link="Ph17_v5_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="Rigid 26" type="fixed">
+  <origin xyz="0.0 0.0 -0.025" rpy="0 0 0"/>
+  <parent link="Ph17_v5_1"/>
+  <child link="80mm_Connector_v1_2"/>
+</joint>
+
+<joint name="Rigid 27" type="fixed">
+  <origin xyz="0.0 0.0 -0.01" rpy="0 0 0"/>
+  <parent link="80mm_Connector_v1_2"/>
+  <child link="80I_v7_1"/>
+</joint>
+
+<joint name="Revolute 28" type="continuous">
+  <origin xyz="0.0594 0.0 -0.067" rpy="0 0 0"/>
+  <parent link="80I_v7_1"/>
+  <child link="80I_v1_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Rigid 29" type="fixed">
+  <origin xyz="0.033 0.0 -0.072" rpy="0 0 0"/>
+  <parent link="80I_v1_1"/>
+  <child link="70mm_Connector_v8_1"/>
+</joint>
+
+<joint name="Rigid 30" type="fixed">
+  <origin xyz="0.0 0.0 -0.01" rpy="0 0 0"/>
+  <parent link="70mm_Connector_v8_1"/>
+  <child link="Ph14_v3_1"/>
+</joint>
+
+<joint name="Revolute 31" type="continuous">
+  <origin xyz="0.0 0.0 -0.0873" rpy="0 0 0"/>
+  <parent link="Ph14_v3_1"/>
+  <child link="Ph_14_v5_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="Rigid 32" type="fixed">
+  <origin xyz="0.0 0.0 -0.025" rpy="0 0 0"/>
+  <parent link="Ph_14_v5_1"/>
+  <child link="70mm_Short_v1_1"/>
+</joint>
+
+<joint name="Rigid 33" type="fixed">
+  <origin xyz="0.0 0.0 -0.09" rpy="0 0 0"/>
+  <parent link="70mm_Short_v1_1"/>
+  <child link="70I_v3_1"/>
+</joint>
+
+<joint name="Revolute 34" type="continuous">
+  <origin xyz="0.0562 0.0 -0.062" rpy="0 0 0"/>
+  <parent link="70I_v3_1"/>
+  <child link="70I_v1_1"/>
+  <axis xyz="1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="Rigid 35" type="fixed">
+  <origin xyz="0.033 0.0 -0.067" rpy="0 0 0"/>
+  <parent link="70I_v1_1"/>
+  <child link="70mm_Connector_v8__1__1"/>
+</joint>
+
+<joint name="Rigid 36" type="fixed">
+  <origin xyz="0.0 0.0 -0.01" rpy="0 0 0"/>
+  <parent link="70mm_Connector_v8__1__1"/>
+  <child link="Ph14_v3__1__1"/>
+</joint>
+
+<joint name="Revolute 37" type="continuous">
+  <origin xyz="0.0 0.0 -0.0873" rpy="0 0 0"/>
+  <parent link="Ph14_v3__1__1"/>
+  <child link="Ph_14_v5__1__1"/>
+  <axis xyz="0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="Rigid 38" type="fixed">
+  <origin xyz="0.0 0.0 -0.025" rpy="0 0 0"/>
+  <parent link="Ph_14_v5__1__1"/>
+  <child link="70mm_Short_v1__1__1"/>
+</joint>
+
+<joint name="Rigid 39" type="fixed">
+  <origin xyz="0.0 0.0 -0.102" rpy="0 0 0"/>
+  <parent link="70mm_Short_v1__1__1"/>
+  <child link="Ph11_v5_1"/>
+</joint>
+
+<joint name="Rigid 40" type="fixed">
+  <origin xyz="0.0 0.0 -0.179" rpy="0 0 0"/>
+  <parent link="Ph11_v5_1"/>
+  <child link="Tool_1"/>
+</joint>
+
+</robot>
