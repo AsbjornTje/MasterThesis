@@ -1,0 +1,2281 @@
+<?xml version="1.0"?>
+<demos>
+  <demoitem>
+    <source>CreateDistanceBoundsConstraintExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex00288821</metadata>
+    <thumbnail>html/CreateDistanceBoundsConstraintExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1639766351">exampleHelperVisualizeBounds.m</file>
+  </demoitem>
+  <demoitem>
+    <source>FollowTaskSpaceTrajectoryInSimulinkExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex00756200</metadata>
+    <thumbnail>html/FollowTaskSpaceTrajectoryInSimulinkExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1562964247">followTaskSpaceTrajectoryModel.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>PathFollowingControllerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex01409283</metadata>
+    <thumbnail>html/PathFollowingControllerExample_05.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1575168938">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateLoopClosureJointConstraintsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex01740590</metadata>
+    <thumbnail>html/CreateLoopClosureJointConstraintsExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1637334578">exampleHelperFourBarLinkageTree.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ParticleFilterExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex01797184</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file timestamp="1520453395" component="robotics">car_model.png</file>
+    <file timestamp="1520453395" component="robotics">exampleHelperCarBotStateTransition.m</file>
+    <file timestamp="1520453395" component="robotics">exampleHelperCarBotMeasurementLikelihood.m</file>
+    <file timestamp="1520453395" component="robotics">exampleHelperCarBotGetGPSReading.m</file>
+    <file timestamp="1520453395" component="robotics">ExampleHelperCarBot.m</file>
+  </demoitem>
+  <demoitem>
+    <source>SimulateJointSpaceTrajectoryTrackingInMATLABExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex01809296</metadata>
+    <thumbnail>html/SimulateJointSpaceTrajectoryTrackingInMATLABExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1681903038">exampleHelperRigidBodyTreeAnimation.m</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateBSplineTrajectoryExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex01997150</metadata>
+    <thumbnail>html/GenerateBSplineTrajectoryExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1544562429">bspline_polytraj_ex1.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>AddCollisionMeshesAndCheckCollisionsForManipExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex02048980</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>GenerateTrapezoidalVelocityTrajectoryExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex02927860</metadata>
+    <thumbnail>html/GenerateTrapezoidalVelocityTrajectoryExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1544571245">trapvel_traj_ex1.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>DesignConstrainedIKSolverUsingIKDesignerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex04884939</metadata>
+    <thumbnail>html/DesignConstrainedIKSolverUsingIKDesignerExample_05.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1644603023">ikSolverDesignExampleData.mat</file>
+    <file component="robotics" timestamp="1644603023">ikSolverDesignSessionData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>InterpolateBetweenHomogenousTransformationsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex05219137</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>GetMassMatrixForManipulatorsInSimulinkExample</source>
+    <type>M-file</type>
+    <extension>m</extension>
+    <metadata>ex05431055</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <file component="robotics" timestamp="1531831539">mass_matrix_example.slx</file>
+    <file component="robotics" timestamp="1516222458">exampleLBR.mat</file>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>GrenerateTrajectoriesForRigidBodyTreeManipulatorExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex06287946</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>GenerateCodeForMotionPlanningUsingRobotImportedFromURDFExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex06856903</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1680183408">iiwaPathPlanner.m</file>
+    <file component="robotics" timestamp="1718890873">exampleHelperClearCollisions.m</file>
+  </demoitem>
+  <demoitem>
+    <source>GetTransformationsInSimulinkExample</source>
+    <type>M-file</type>
+    <extension>m</extension>
+    <metadata>ex08800459</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <file timestamp="1531772743" component="robotics">get_transform_example.slx</file>
+    <file component="robotics" timestamp="1516222458">exampleLBR.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CalculateTheMassMatrixForARobotConfigurationExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex10920321</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>BackhoeMotionPlanningUsingRRTExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex12249765</metadata>
+    <thumbnail>html/BackhoeMotionPlanningUsingRRTExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simscapemultibody</product>
+    <file component="robotics" timestamp="1683069207">helperImportAndCreateBackhoeRBT.m</file>
+    <file component="robotics" timestamp="1683069207">helperMuteBenignWarnings.m</file>
+    <file component="robotics" timestamp="1719938763">BackhoeLibrary.slx</file>
+    <file component="robotics" timestamp="1719938763">sm_backhoe_with_environment.slx</file>
+    <dir component="robotics" timestamp="1719938763">BackhoeSupport</dir>
+  </demoitem>
+  <demoitem>
+    <source>VisualizeManipulatorTrajectoriesWithSimulink3DAnimationExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex12618229</metadata>
+    <thumbnail>html/VisualizeManipulatorTrajectoriesWithSimulink3DAnimationExample_05.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <product>sl3d</product>
+    <file component="robotics" timestamp="1704739362">SL3DJointSpaceManipulatorTrajectory.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>PerformTrajectoryTrackingAndJointTorqueUsingSimscapeExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex13124544</metadata>
+    <thumbnail>html/PerformTrajectoryTrackingAndJointTorqueUsingSimscapeExample_08.png</thumbnail>
+    <sandboxPublished/>
+    <product>robotics</product>
+    <product>robot_library_data_spkg</product>
+    <product>simulink</product>
+    <product>simscapemultibody</product>
+    <product>simscape</product>
+    <product>matlab</product>
+    <file component="robotics" timestamp="1641484293">ManipulatorTrajectoryPlanning.slx</file>
+    <file component="robotics" timestamp="1714390346">helperInstrumentSMModels.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ControlAndSimulateMultipleWarehouseRobotsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex13671923</metadata>
+    <thumbnail>html/ControlAndSimulateMultipleWarehouseRobotsExample_16.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <file component="robotics" timestamp="1561493663">RobotState.m</file>
+    <file component="robotics" timestamp="1562963731">warehouseRobotBusObjects.mat</file>
+    <file component="robotics" timestamp="1561493663">exampleWarehouseBlock.stl</file>
+    <file component="robotics" timestamp="1562963731">visualizeWarehouse.m</file>
+    <file component="robotics" timestamp="1562197725">exampleHelperVisualizeWarehouseRobots.m</file>
+    <file component="robotics" timestamp="1561493663">forklift.stl</file>
+    <file component="robotics" timestamp="1561493663">forkliftwithload.stl</file>
+    <file component="robotics" timestamp="1561493663">groundvehiclewithload.stl</file>
+    <file component="robotics" timestamp="1596548061">multiRobotExampleModel.slx</file>
+    <file component="robotics" timestamp="1596548061">robotController.slx</file>
+    <file component="robotics" timestamp="1562963731">multiRobotWarehouseMap.mat</file>
+    <file component="robotics" timestamp="1562963731">exampleMultiRobotHelperInit.m</file>
+    <file component="robotics" timestamp="1562963731">exampleMultiRobotParams.mat</file>
+    <file component="robotics" timestamp="1562963731">exampleHelperReplacePlantSubsystem.m</file>
+    <file component="robotics" timestamp="1562963731">packages.mat</file>
+    <file component="robotics" timestamp="1562963731">PackageState.m</file>
+    <file component="robotics" timestamp="1565105086">exampleHelperRobotPairwiseDistances.m</file>
+  </demoitem>
+  <demoitem>
+    <source>CheckForManipulatorSelfCollisionsUsingCollisionMeshesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex13676114</metadata>
+    <thumbnail>html/CheckForManipulatorSelfCollisionsUsingCollisionMeshesExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1560481433">exampleHelperHighlightCollisionBodies.m</file>
+  </demoitem>
+  <demoitem>
+    <source>AchieveEndEffectorPositionUsingInverseKinematicsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex14133889</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanUsingACapsulizedRigidBodyTreeExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex14411249</metadata>
+    <thumbnail>html/PlanUsingACapsulizedRigidBodyTreeExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>SolveInverseKinematicsForClosedLoopLinkagesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex14551141</metadata>
+    <thumbnail>html/SolveInverseKinematicsForClosedLoopLinkagesExample_07.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1643906505">exampleHelperFourBarLinkageTree.m</file>
+    <file component="robotics" timestamp="1643906505">exampleHelperFrameVisual.m</file>
+  </demoitem>
+  <demoitem>
+    <source>EstimatePoseOfFixedCameraRelativeToRobotBaseExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex14561724</metadata>
+    <thumbnail>html/EstimatePoseOfFixedCameraRelativeToRobotBaseExample_08.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>vision</product>
+    <file component="robotics" timestamp="1718112396">calibrationData.zip</file>
+    <file component="robotics" timestamp="1718112396">estimateCameraPoseWrtRobotBase.mat</file>
+    <file component="robotics" timestamp="1718112396">helperEstimateHandEyeTransform.m</file>
+  </demoitem>
+  <demoitem>
+    <source>VisualizeRobotConfigurationsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex14831504</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>InterpolateATrajectoryBetweenRotationMatricesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex15530152</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>BuildManipulatorRobotUsingKinematicDHParametersExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex16504790</metadata>
+    <thumbnail>html/BuildManipulatorRobotUsingKinematicDHParametersExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>IdentifyWorkspaceRegionsWithHighManipulabilityExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex17100966</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>TrajectoryControlThroughInverseKinematicsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex17114456</metadata>
+    <thumbnail>html/TrajectoryControlThroughInverseKinematicsExample_05.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <file component="robotics" timestamp="1532039057">IKSolver.PNG</file>
+    <file component="robotics" timestamp="1532039057">ManipDynamics.PNG</file>
+    <file component="robotics" timestamp="1532039057">MeasuredPose.PNG</file>
+    <file component="robotics" timestamp="1532039057">WaypointSelection.PNG</file>
+    <file component="robotics" timestamp="1524838204">boundaryData.mat</file>
+    <file component="robotics" timestamp="1524838204">coinBoundaries.png</file>
+    <file component="robotics" timestamp="1566920781">IKTrajectoryControlExample.slx</file>
+    <file component="robotics" timestamp="1531406971">clearMeshes.m</file>
+    <file component="robotics" timestamp="1531406971">exampleHelperVisualizeIK.m</file>
+    <file component="robotics" timestamp="1531835647">sawyer_robot.rights</file>
+    <file component="robotics" timestamp="1566920112">defaultTrajControlSLXParams.mat</file>
+    <file component="robotics" timestamp="1676369944">coins.png</file>
+  </demoitem>
+  <demoitem>
+    <source>CalculateDerivativeForMoreStatesAtOnceExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex18457334</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathOfARoboticArmMountedOnAQuadrotorExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex18526539</metadata>
+    <thumbnail>html/PlanPathOfARoboticArmMountedOnAQuadrotorExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>GenerateRotationTrajectoryExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex19052278</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1544569256">rot_traj_ex1.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>SimulateSimpleRobotScenarioExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex20602763</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>ImportRobotFromURDFFileExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex21025763</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>DesignManipulatorPathsUsingIKDesignerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex21496567</metadata>
+    <thumbnail>html/DesignManipulatorPathsUsingIKDesignerExample_18.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1644603743">constructToolStation.m</file>
+    <file component="robotics" timestamp="1644603743">customEEBuilder.m</file>
+    <file component="robotics" timestamp="1644603743">dispensingSessionData.mat</file>
+    <file component="robotics" timestamp="1644603743">pathWaypointData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PlotPathOfAnUnicycleKinematicRobotExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex21803475</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>CalculateTheInducedTorquesFromJointVelocitiesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex21910783</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>MultiAgentWithResourceAllocationAndConflictManagementExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex23459641</metadata>
+    <thumbnail>html/MultiAgentWithResourceAllocationAndConflictManagementExample_10.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simevents</product>
+    <file component="robotics" timestamp="1642774340">WarehouseMapEditor.p</file>
+    <file component="robotics" timestamp="1658500021">multiRobotTaskingRouting.slx</file>
+    <file component="robotics" timestamp="1642774340">AgentStatus.p</file>
+    <file component="robotics" timestamp="1642774340">AgentType.p</file>
+    <file component="robotics" timestamp="1642774340">RoutingAlgorithm.p</file>
+    <file component="robotics" timestamp="1642774340">TaskStatus.p</file>
+    <file component="robotics" timestamp="1642774340">TaskingAlgorithm.p</file>
+    <file component="robotics" timestamp="1642774340">aStarSearch.p</file>
+    <file component="robotics" timestamp="1642774340">exampleHelperVisualizeWarehouseAgents.m</file>
+    <file component="robotics" timestamp="1642524835">exampleMultiRobotParams.mat</file>
+    <file component="robotics" timestamp="1642774340">generateTrafficNetwork.p</file>
+    <file component="robotics" timestamp="1642774340">plotMetrics.p</file>
+    <file component="robotics" timestamp="1642774340">plotTrafficNetwork.p</file>
+    <file component="robotics" timestamp="1642774340">testReservation.p</file>
+    <file component="robotics" timestamp="1642774340">trafficNetworkReservation.p</file>
+    <file component="robotics" timestamp="1642774340">visualizeWarehouse.p</file>
+    <file component="robotics" timestamp="1642524835">exampleWarehouseBlock.stl</file>
+    <file component="robotics" timestamp="1642524835">forklift.stl</file>
+    <file component="robotics" timestamp="1642524835">forkliftwithload.stl</file>
+    <file component="robotics" timestamp="1642524835">groundvehiclewithload.stl</file>
+    <file component="robotics" timestamp="1642774340">agent.png</file>
+    <file component="robotics" timestamp="1642774340">customWarehouseMap.mat</file>
+    <file component="robotics" timestamp="1644402485">exampleMultiAgentInit.m</file>
+    <file component="robotics" timestamp="1644402485">exampleMultiAgentPackages.mat</file>
+    <file component="robotics" timestamp="1644420053">exampleMultiAgentParams.mat</file>
+    <file component="robotics" timestamp="1644420053">exampleMultiAgentWarehouseMap.mat</file>
+    <dir component="robotics" timestamp="1658500021">+manager</dir>
+    <dir component="robotics" timestamp="1658500021">+panels</dir>
+    <dir component="robotics" timestamp="1658500021">+utility</dir>
+    <dir component="robotics" timestamp="1658500021">+view</dir>
+  </demoitem>
+  <demoitem>
+    <source>PlanMinimumJerkTrajectoryForRobotArmExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex23498927</metadata>
+    <thumbnail>html/PlanMinimumJerkTrajectoryForRobotArmExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>InterpolateATrajectoryBetweenQuaternionsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex24218298</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>SpecifyMultipleWorkspaceGoalRegionsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex24404803</metadata>
+    <thumbnail>html/SpecifyMultipleWorkspaceGoalRegionsExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PickandPlaceWorkflowInGazeboUsingPointCloudProcessingExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex25388269</metadata>
+    <thumbnail>html/PickandPlaceWorkflowInGazeboUsingPointCloudProcessingExample_09.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>vision</product>
+    <product>ros</product>
+    <product>images</product>
+    <file component="robotics" timestamp="1685105419">exampleCommandActivateGripperROSGazeboScene.m</file>
+    <file component="robotics" timestamp="1685105419">exampleCommandBuildWorldROSGazeboScene.m</file>
+    <file component="robotics" timestamp="1685105419">exampleCommandComputeGraspPoseROSGazeboScene.m</file>
+    <file component="robotics" timestamp="1685105419">exampleCommandDetectPartsROSGazeboScene.m</file>
+    <file component="robotics" timestamp="1685105419">exampleCommandMoveToTaskConfigROSGazeboScene.m</file>
+    <file component="robotics" timestamp="1685105419">exampleCommandPickingLogicROSGazeboScene.m</file>
+    <file component="robotics" timestamp="1593621576">exampleHelperBottlePoints.stl</file>
+    <file component="robotics" timestamp="1593621576">exampleHelperCanPoints.stl</file>
+    <file component="robotics" timestamp="1685105419">exampleHelperCoordinatorPickPlaceROSGazeboScene.m</file>
+    <file component="robotics" timestamp="1593621576">exampleHelperKINOVAGen3GripperGazeboRRTScene.mat</file>
+    <file component="robotics" timestamp="1685105419">exampleHelperPackageJointTrajectoryKINOVAROSGazeboScene.m</file>
+    <file component="robotics" timestamp="1685105419">exampleHelperSampleWGRROSGazeboScene.m</file>
+  </demoitem>
+  <demoitem>
+    <source>PositionADeltaRobotUsingGeneralizedInverseKinematicsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex25989967</metadata>
+    <thumbnail>html/PositionADeltaRobotUsingGeneralizedInverseKinematicsExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1575400245">exampleHelperDeltaRobot.m</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateKinematicallyConstrainedTrajectoryExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex26749996</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1648547436">helperPlotConstrainedTrajectory.m</file>
+  </demoitem>
+  <demoitem>
+    <source>TransferLearningToUnseenObstacleEnvironmentUsingDLCHOMPExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex27248580</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>nnet</product>
+    <file component="robotics" timestamp="1704883943">exampleHelperShowAnimatedRobotTrajectory.m</file>
+    <file component="robotics" timestamp="1704883943">exampleHelperExtractDataFromDLCHOMPSample.m</file>
+    <file component="robotics" timestamp="1707991062">exampleHelperDownloadData.m</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateCollisionFreeConfigurationsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex27364555</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1638282357">iksessiondata.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>AttachAGripperToARigidBodyTreeManipulatorModelExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex27499926</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PerformObstacleAvoidanceWithMobileRobotsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex27792275</metadata>
+    <thumbnail>html/PerformObstacleAvoidanceWithMobileRobotsExample_05.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>nav</product>
+    <file component="robotics" timestamp="1639595687">exampleHelperGetCurrentPose.m</file>
+    <file component="robotics" timestamp="1642082687">exampleHelperInitializeSensorVisualization.m</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateTimeOptimalTrajectoriesWithTOPPRAExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex27881381</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>ComputeCubicTrajectoryFor2DPlanarMotionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex27903901</metadata>
+    <thumbnail>html/ComputeCubicTrajectoryFor2DPlanarMotionExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>MappingWithKnownPosesDiffDriveExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex28026555</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1575168938">exampleMaps.mat</file>
+    <file component="robotics" timestamp="1562699140">exampleHelperDiffDriveCtrl.m</file>
+  </demoitem>
+  <demoitem>
+    <source>FollowJointSpaceTrajectoryInSimulinkExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex28389663</metadata>
+    <thumbnail>html/FollowJointSpaceTrajectoryInSimulinkExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1562957085">followJointSpaceTrajectoryModel.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>PlanAndExecuteCollisionFreeTrajectoriesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex28735643</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>optim</product>
+    <product>mpc</product>
+    <file component="robotics" timestamp="1591204116">helperCheckGoalReachedKINOVA.m</file>
+    <file component="robotics" timestamp="1596561875">helperCreateObstaclesKINOVA.m</file>
+    <file component="robotics" timestamp="1591204116">helperDesignNLMPCobjKINOVA.m</file>
+    <file component="robotics" timestamp="1591204116">helperFinalVisualizerKINOVA.m</file>
+    <file component="robotics" timestamp="1591204116">helperInitialVisualizerKINOVA.m</file>
+    <file component="robotics" timestamp="1562607798">helperTimeBasedStateInputsKINOVA.m</file>
+    <file component="robotics" timestamp="1596561875">helperUpdateMovingObstaclesKINOVA.m</file>
+    <file component="robotics" timestamp="1591204116">nlmpcCostFunctionKINOVA.m</file>
+    <file component="robotics" timestamp="1591204116">nlmpcIneqConFunctionKINOVA.m</file>
+    <file component="robotics" timestamp="1591204116">nlmpcJacobianConstraintKINOVA.m</file>
+    <file component="robotics" timestamp="1591204116">nlmpcJacobianCostKINOVA.m</file>
+    <file component="robotics" timestamp="1591204116">nlmpcJacobianModelKINOVA.m</file>
+    <file component="robotics" timestamp="1591204116">nlmpcJacobianOutputModelKINOVA.m</file>
+    <file component="robotics" timestamp="1591204116">nlmpcModelKINOVA.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ExportRobotModelDetailsInURDFFileFormatExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex28736864</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>RunAndConnectToMultipleGazeboSessionsFromSimulinkExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex29856596</metadata>
+    <thumbnail>html/RunAndConnectToMultipleGazeboSessionsFromSimulinkExample_06.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1662628181">Ur10BasicWithPlugin.world</file>
+    <file component="robotics" timestamp="1674473224">assignConnection.m</file>
+    <file component="robotics" timestamp="1674842473">multiGazeboSession.slx</file>
+    <file component="robotics" timestamp="1674473224">parsimStart.m</file>
+  </demoitem>
+  <demoitem>
+    <source>PlotPathOfAnAckermannKinematicRobotExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex30123375</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PickandPlaceWorkflowInGazeboUsingROSExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex30674448</metadata>
+    <thumbnail>html/PickandPlaceWorkflowInGazeboUsingROSExample_01.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>vision</product>
+    <product>nnet</product>
+    <product>ros</product>
+    <product>stateflow</product>
+    <file component="robotics" timestamp="1576614225">exampleCommandActivateGripperROSGazebo.m</file>
+    <file component="robotics" timestamp="1576614225">exampleCommandClassifyPartsROSGazebo.m</file>
+    <file component="robotics" timestamp="1576614225">exampleCommandComputeGraspPoseROSGazebo.m</file>
+    <file component="robotics" timestamp="1587587381">exampleCommandDetectPartsROSGazebo.m</file>
+    <file component="robotics" timestamp="1576614225">exampleCommandMoveToTaskConfigROSGazebo.m</file>
+    <file component="robotics" timestamp="1576614225">exampleCommandPickingLogicROSGazebo.m</file>
+    <file component="robotics" timestamp="1576614225">exampleHelperCoordinatorPickPlaceROSGazebo.m</file>
+    <file component="robotics" timestamp="1587587381">exampleHelperFlowChartPickPlaceROSGazebo.sfx</file>
+    <file component="robotics" timestamp="1576614225">exampleHelperKINOVAGen3GripperROSGazebo.mat</file>
+    <file component="robotics" timestamp="1576614225">exampleHelperPackageJointTrajectoryKINOVAROSGazebo.m</file>
+    <file component="robotics" timestamp="1576614225">exampleHelperYolo2DetectorROSGazebo.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>BuildAManipulatorRobotUsingDenavitHartenbergParametersExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex30778670</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>ModelAndControlAManipulatorArmWithRSTAndSMExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex30782652</metadata>
+    <thumbnail>html/ModelAndControlAManipulatorArmWithRSTAndSMExample_15.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simscape</product>
+    <file component="robotics" timestamp="1575389974">abbSavedConfigs.mat</file>
+    <file component="robotics" timestamp="1575389974">abbYuMi.rights</file>
+    <file component="robotics" timestamp="1575389974">abbYuMi.urdf</file>
+    <file component="robotics" timestamp="1575389974">exampleHelperSetupWorkspace.m</file>
+    <file component="robotics" timestamp="1578614752">modelWithControllerAndBasicRobotDynamics.slx</file>
+    <file component="robotics" timestamp="1578614752">modelWithSimplifiedSystemDynamics.slx</file>
+    <file component="robotics" timestamp="1578614752">modelWithSimscapeRobotAndEnvironmentDynamics.slx</file>
+    <file component="robotics" timestamp="1575389974">yumi_coarse_body.stl</file>
+    <file component="robotics" timestamp="1575389974">yumi_coarse_link_1.stl</file>
+    <file component="robotics" timestamp="1575389974">yumi_coarse_link_2.stl</file>
+    <file component="robotics" timestamp="1575389974">yumi_coarse_link_3.stl</file>
+    <file component="robotics" timestamp="1575389974">yumi_coarse_link_4.stl</file>
+    <file component="robotics" timestamp="1575389974">yumi_coarse_link_5.stl</file>
+    <file component="robotics" timestamp="1575389974">yumi_coarse_link_6.stl</file>
+    <file component="robotics" timestamp="1575389974">yumi_coarse_link_7.stl</file>
+    <file component="robotics" timestamp="1575389974">yumi_gripper_base.stl</file>
+    <file component="robotics" timestamp="1575389974">yumi_gripper_finger.stl</file>
+    <file component="robotics" timestamp="1578614752">abbExampleRSTVariables.mat</file>
+    <file component="robotics" timestamp="1578614752">abbExampleSMVariables.mat</file>
+    <workFolder>MdlCtrlManipArmRSTAndSMExample</workFolder>
+  </demoitem>
+  <demoitem>
+    <source>SolveAnalyticalIKForLargeDOFRobotExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex31246388</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PalletizeBoxesUsingCobotExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex32047557</metadata>
+    <thumbnail>html/PalletizeBoxesUsingCobotExample_06.gif</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" mexFunction="cgxe" timestamp="1721657178">PalletizeBoxesUsingCobot.slx</file>
+    <file component="robotics" timestamp="1721135875">getPalletGoalPose.m</file>
+    <file component="robotics" timestamp="1721657178">spawnBox.m</file>
+    <file component="robotics" timestamp="1721657178">exampleHelperPalletArrangement.m</file>
+    <file component="robotics" timestamp="1721657178">exampleHelperSetUpCobot.m</file>
+    <file component="robotics" timestamp="1721657178">exampleHelperGetBoxPoses.m</file>
+    <file component="robotics" timestamp="1721657178">exampleHelperGetCollisionEnvironment.m</file>
+    <file component="robotics" timestamp="1721657178">exampleHelperGetInitActorProp.m</file>
+    <file component="robotics" timestamp="1721657178">exampleHelperManipulatorRRT.m</file>
+    <dir component="robotics" timestamp="1721904916">SceneAssets</dir>
+  </demoitem>
+  <demoitem>
+    <source>DesignATrajectoryWithVelocityLimitsUsingTrapVelTrajExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex32304449</metadata>
+    <thumbnail>html/DesignATrajectoryWithVelocityLimitsUsingTrapVelTrajExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1625466958">helperPlotTaskSpaceTraj.m</file>
+    <file component="robotics" timestamp="1623783135">helperProfileForMaxVel.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ModifyARobotRigidBodyTreeModelExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex32567432</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>ImportRobotFromURDFCharacterVectorExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex33021996</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathThrough3DOccupancyMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex33641347</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>APathPlanningAndObstacleAvoidanceInAWarehouseExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex34316982</metadata>
+    <thumbnail>html/APathPlanningAndObstacleAvoidanceInAWarehouseExample_04.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>nav</product>
+    <file component="robotics" timestamp="1616605316">aStarPathPlanningAndObstacleAvoidanceInWarehouse.slx</file>
+    <file component="robotics" timestamp="1588020245">helperPlanningAndObstacleAvoidanceWarehouseMap.mat</file>
+    <file component="robotics" timestamp="1572988991">exampleHelperWarehouseRobotWithGazeboBuses.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ManipulatorTrajectoriesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex34500177</metadata>
+    <thumbnail>html/ManipulatorTrajectoriesExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <file component="robotics" timestamp="1689263811">generateMembranePaths.m</file>
+    <file component="robotics" timestamp="1689263811">shapeTracingSawyer.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>InflateBinaryOccupancyGridExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex34518698</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>ComputeJointTorqueToCounterExternalForcesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex35229538</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>AttachARigidBodyAndJointToARigidBodyTreeExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex35587162</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>ComputeTheGeometricJacobianForARobotConfigurationExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex37151792</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PerformFruitPickandPlaceUsingUR10InSimulinkAndGazeboExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex37544638</metadata>
+    <thumbnail>html/PerformFruitPickandPlaceUsingUR10InSimulinkAndGazeboExample_11.gif</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>vision</product>
+    <product>nnet</product>
+    <product>simulink</product>
+    <product>yolov4</product>
+    <product>nav</product>
+    <file component="robotics" timestamp="1692717094">FruitPickingGazeboManipulator.slx</file>
+    <file component="robotics" timestamp="1692717094">FruitPickingGazeboManipulatorDD.sldd</file>
+    <file component="robotics" timestamp="1692717094">Generate3D.m</file>
+    <file component="robotics" timestamp="1692717094">MotionPlanner.m</file>
+    <file component="robotics" timestamp="1692717094">getTargetCoordinate.m</file>
+    <file component="robotics" timestamp="1692717094">initializeCameraParameters.m</file>
+    <file component="robotics" timestamp="1692717094">initializeMotionPlanningParameters.m</file>
+    <file component="robotics" timestamp="1692717094">loadYoloV4.m</file>
+  </demoitem>
+  <demoitem>
+    <source>AddPerceptionModuleToIntelligentBinPickingExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex37692510</metadata>
+    <thumbnail>html/AddPerceptionModuleToIntelligentBinPickingExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>vision</product>
+    <product>sl3d</product>
+    <file component="robotics" timestamp="1721158745">PosemaskRCNN_Detection_Module.slx</file>
+    <file component="robotics" timestamp="1720556224">PoseMaskRCNNModel.m</file>
+    <file component="robotics" timestamp="1720556224">loadObjectDetectorResponseBus.m</file>
+    <file component="robotics" timestamp="1720556224">loadRobotParameters.m</file>
+    <file component="robotics" timestamp="1720556224">loadMotionPlannerCollisionObjectBus.m</file>
+    <file component="robotics" timestamp="1720556224">Ishape.ply</file>
+    <file component="robotics" timestamp="1720556224">Ishape.stl</file>
+    <file component="robotics" timestamp="1720556224">Lshape.ply</file>
+    <file component="robotics" timestamp="1720556224">Lshape.stl</file>
+    <file component="robotics" timestamp="1720556224">Tshape.ply</file>
+    <file component="robotics" timestamp="1720556224">Tshape.stl</file>
+    <file component="robotics" timestamp="1720556224">Xshape.ply</file>
+    <file component="robotics" timestamp="1720556224">Xshape.stl</file>
+    <file component="robotics" timestamp="1721407274">LoadBusesPerception.m</file>
+    <file component="robotics" timestamp="1727704635">Perception_Harness.slx</file>
+    <file component="robotics" timestamp="1721407274">initRobotModelParams_BinPickingEnvironment.m</file>
+    <file component="robotics" timestamp="1721407274">initRobotModelParams_Perception.m</file>
+    <file component="robotics" timestamp="1720556224">Bin_STL_Scaled.stl</file>
+    <file component="robotics" timestamp="1720556224">binPickingStand_scaled.stl</file>
+    <file component="robotics" timestamp="1720556224">table_solid_scaled.stl</file>
+    <file component="robotics" timestamp="1720556224">pointCloudModels.mat</file>
+    <file component="robotics" timestamp="1720556224">ObjectTypesID.m</file>
+    <file component="robotics" timestamp="1721407274">sampleHarnessOutputData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>GetTheTransformBetweenFramesForARobotConfigurationExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex38408086</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>GenerateCubicPolynomialTrajectoryExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex39445394</metadata>
+    <thumbnail>html/GenerateCubicPolynomialTrajectoryExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1544559536">cubic_polytraj_ex1.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>GazeboCosimRobotArmControlExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex39743144</metadata>
+    <thumbnail>html/GazeboCosimRobotArmControlExample_19.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <file component="robotics" timestamp="1602533236">gazeboCosimControl.slx</file>
+    <file component="robotics" timestamp="1588888512">custom_busobjects_basic.mat</file>
+    <file component="robotics" timestamp="1602200334">Ur10BasicWithPlugin.world</file>
+  </demoitem>
+  <demoitem>
+    <source>GazeboCosimRobotArmSetupExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex40076810</metadata>
+    <thumbnail>html/GazeboCosimRobotArmSetupExample_02.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <file component="robotics" timestamp="1588888512">custom_busobjects_basic.mat</file>
+    <file component="robotics" timestamp="1602533236">gazeboCosimControl.slx</file>
+    <file component="robotics" timestamp="1602200334">Ur10BasicWithPlugin.world</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateDependenciesForBuiltinGazeboMessageExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex40128733</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>GettingStartedWithDLCHOMPExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex41715743</metadata>
+    <thumbnail>html/GettingStartedWithDLCHOMPExample_02.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>nnet</product>
+    <product>matlabcoder</product>
+    <file component="robotics" timestamp="1707991062">exampleHelperCompareCHOMPPlanners.m</file>
+    <file component="robotics" timestamp="1707991062">exampleHelperPlotMinDistanceFromBaseSphere.m</file>
+    <file component="robotics" timestamp="1719311634">exampleHelperShowAnimatedRobotTrajectory.m</file>
+    <file component="robotics" timestamp="1707991062">exampleHelperExtractDataFromDLCHOMPSample.m</file>
+    <file component="robotics" timestamp="1707991062">exampleHelperDownloadData.m</file>
+    <file component="robotics" timestamp="1719311634">exampleHelperPretrainedDLCHOMPOptimize.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ReplaceRigidBodyCollisionMeshesWithVisualMeshesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex42354153</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>ComputeGravityTorqueForRobotConfigurationExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex42957919</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateCodeForInverseKinematicsUsingRobotFromLibraryExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex43869123</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1679592657">ikCodegen.m</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateOrUpdatePRMExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex44165603</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1520608552">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateAndModifyRobotDetailsInXMLDOMNodeExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex45346280</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>IKBlockTrajectoryExample</source>
+    <type>M-file</type>
+    <extension>m</extension>
+    <metadata>ex45526735</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <file component="robotics" timestamp="1531939923">sm_ik_trajectory_model.slx</file>
+    <file component="robotics" timestamp="1527612333">ik_trajectory_model_image.PNG</file>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateAndModifyCapsuleApproximationExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex46051198</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>SimulateAMobileRobotInAWarehouseUsingGazeboExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex47572407</metadata>
+    <thumbnail>html/SimulateAMobileRobotInAWarehouseUsingGazeboExample_08.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1662654720">exampleHelperWarehouseRobotWithGazeboBuses.mat</file>
+    <file component="robotics" timestamp="1579009723">simulateWarehouseRobotInGazebo.slx</file>
+    <file component="robotics" timestamp="1575154296">gazeboWarehouseMap.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>GeneralizedInverseKinematicsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex47775355</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+    <file component="robotics" timestamp="1602811161">exampleHelperPlotCupAndTable.m</file>
+  </demoitem>
+  <demoitem>
+    <source>SimulateDifferentKinematicModelsForMobileRobotsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex48589970</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1701938131">exampleHelperMobileRobotController.m</file>
+  </demoitem>
+  <demoitem>
+    <source>PerformCoSimulationBetweenSimulinkAndGazeboExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex48826518</metadata>
+    <thumbnail>html/PerformCoSimulationBetweenSimulinkAndGazeboExample_01.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <file component="robotics" timestamp="1559154348">helperPlotImage.m</file>
+    <file component="robotics" timestamp="1563554304">performCoSimulationWithGazebo.slx</file>
+    <file component="robotics" timestamp="1559158594">performCoSimulationWithGazeboDD.sldd</file>
+  </demoitem>
+  <demoitem>
+    <source>ComputeQuinticTrajectoryFor2DPlanarMotionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex48891022</metadata>
+    <thumbnail>html/ComputeQuinticTrajectoryFor2DPlanarMotionExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>AckermannKinematicModelWithSteeringAngleConstraintsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex49056911</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>UseCustomTimeScalingForARotationTrajectoryExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex49759966</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1548271334">custom_time_scaling_rotation.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>OptimizeTrajectoryUsingDlCHOMPExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex51958539</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PerformPickAndPlaceCollisionObstacleAvoidRobotScenarioExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex51980071</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1671037571">exampleHelperLoadFrankaScenario.m</file>
+  </demoitem>
+  <demoitem>
+    <source>AddInertialFrameToRobotScenarioExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex52400050</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateRigidBodyTreeCodeGeneratingFunctionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex52846606</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>CenterOfMassAndJacobianForARobotConfigurationExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex52966274</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>JointSpaceMotionModelTopicExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex53199235</metadata>
+    <thumbnail>html/JointSpaceMotionModelTopicExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathForABicycleRobotInSimulinkExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex53396939</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1582755790">pathPlanningBicycleSimulinkModel.slx</file>
+    <file component="robotics" timestamp="1575168938">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ExecuteTasksForAWarehouseRobotExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex53981431</metadata>
+    <thumbnail>html/ExecuteTasksForAWarehouseRobotExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <file component="robotics" timestamp="1565211270">warehouseTasksRobotSimulationModel.slx</file>
+    <file component="robotics" timestamp="1562080683">warehouseMaps.mat</file>
+    <file component="robotics" timestamp="1562881152">exampleHelperVisualizeExecuteRobots.m</file>
+    <file component="robotics" timestamp="1561579496">exampleWarehouseBlockExecuteTasks.stl</file>
+    <file component="robotics" timestamp="1561579496">forkliftExecuteRobotTasks.stl</file>
+  </demoitem>
+  <demoitem>
+    <source>SyncMapWithAnOverlappingMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex54611812</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1575168938">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ExecuteTransformationTrajectoryUsingManipulatorIKExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex54817559</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1568659623">transform_traj_ex1.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>ImportSimscapeMultibodyModelToRigidBodyTreeObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex56587942</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simscape</product>
+    <product>simscapemultibody</product>
+    <product>simulink</product>
+    <file component="robotics" timestamp="1658163039">example_smhumanoidrobot.slx</file>
+    <file component="robotics" timestamp="1555091177">cover.step</file>
+    <file component="robotics" timestamp="1555092291">foot.step</file>
+    <file component="robotics" timestamp="1555092291">hand.step</file>
+    <file component="robotics" timestamp="1555092291">head.step</file>
+    <file component="robotics" timestamp="1555092291">hip.step</file>
+    <file component="robotics" timestamp="1555092291">lower_arm.step</file>
+    <file component="robotics" timestamp="1555092291">lower_leg.step</file>
+    <file component="robotics" timestamp="1555092291">neck.step</file>
+    <file component="robotics" timestamp="1555092291">shoulder.step</file>
+    <file component="robotics" timestamp="1555092291">shoulder_line.step</file>
+    <file component="robotics" timestamp="1555092291">trunk.step</file>
+    <file component="robotics" timestamp="1555092291">upper_arm.step</file>
+    <file component="robotics" timestamp="1555092291">upper_leg.step</file>
+    <file component="robotics" timestamp="1555092291">waistline.step</file>
+    <file component="robotics" timestamp="1658163039">left_ankle_actuation.mat</file>
+    <file component="robotics" timestamp="1658163039">left_hip_actuation.mat</file>
+    <file component="robotics" timestamp="1658163039">left_hip_sag_actuation.mat</file>
+    <file component="robotics" timestamp="1658163039">left_knee_actuation.mat</file>
+    <file component="robotics" timestamp="1658163039">left_shoulder_actuation.mat</file>
+    <file component="robotics" timestamp="1658163039">neck_actuation.mat</file>
+    <file component="robotics" timestamp="1658163039">right_ankle_actuation.mat</file>
+    <file component="robotics" timestamp="1658163039">right_hip_actuation.mat</file>
+    <file component="robotics" timestamp="1658163039">right_hip_sag_actuation.mat</file>
+    <file component="robotics" timestamp="1658163039">right_knee_actuation.mat</file>
+    <file component="robotics" timestamp="1658163039">right_shoulder_actuation.mat</file>
+    <file component="robotics" timestamp="1658163039">shoulder_actuation.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>TransferLearningToMeetNewTrajRequirementUsingDLCHOMPExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex56589186</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>nnet</product>
+    <file component="robotics" timestamp="1704724739">exampleHelperExtractDataFromDLCHOMPSample.m</file>
+    <file component="robotics" timestamp="1719562738">exampleHelperShowAnimatedRobotTrajectory.m</file>
+    <file component="robotics" timestamp="1707991062">exampleHelperDownloadData.m</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateAndModifyRobotJointInXMLDOMNodeExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex56891057</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanWithEEConstraintsUsingStateSpaceForManipulatorsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex57175192</metadata>
+    <thumbnail>html/PlanWithEEConstraintsUsingStateSpaceForManipulatorsExample_04.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>nav</product>
+    <file component="robotics" timestamp="1647971076">exampleHelperConstrainedStateSpace.m</file>
+    <file component="robotics" timestamp="1620420282">exampleHelperEndEffectorConstrainedEnvironment.m</file>
+    <file component="robotics" timestamp="1620420282">examlpeHelperFinger_EELink.stl</file>
+    <file component="robotics" timestamp="1620420282">exampleHelperBase_EELink.stl</file>
+    <file component="robotics" timestamp="1620420282">exampleHelperConstrainedRobotMoveGripper.m</file>
+  </demoitem>
+  <demoitem>
+    <source>TwoDInverseKinematicsExampleExample</source>
+    <type>M-file</type>
+    <extension>m</extension>
+    <metadata>ex57698361</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>SolveAnalyticalInverseKinematicsForRobotManipulatorExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex58528596</metadata>
+    <thumbnail>html/SolveAnalyticalInverseKinematicsForRobotManipulatorExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PerformPathPlanningSimulationWithMobileRobotExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex58752194</metadata>
+    <thumbnail>html/PerformPathPlanningSimulationWithMobileRobotExample_04.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PickandPlaceWorkflowUsingRRTPlannerAndStateflowForMATLABExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex60026161</metadata>
+    <thumbnail>html/PickandPlaceWorkflowUsingRRTPlannerAndStateflowForMATLABExample_07.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>stateflow</product>
+    <file component="robotics" timestamp="1591967875">RobotiqMeshLicense.rights</file>
+    <file component="robotics" timestamp="1591712708">exampleCommandActivateGripperRRT.m</file>
+    <file component="robotics" timestamp="1591712708">exampleCommandBuildWorldRRT.m</file>
+    <file component="robotics" timestamp="1591712708">exampleCommandClassifyPartsRRT.m</file>
+    <file component="robotics" timestamp="1591712708">exampleCommandComputeGraspPoseRRT.m</file>
+    <file component="robotics" timestamp="1591712708">exampleCommandDetectPartsRRT.m</file>
+    <file component="robotics" timestamp="1711380950">exampleCommandMoveToTaskConfigRRT.m</file>
+    <file component="robotics" timestamp="1591712708">exampleCommandPickingLogicRRT.m</file>
+    <file component="robotics" timestamp="1591712708">exampleHelperCoordinatorPickPlaceRRT.m</file>
+    <file component="robotics" timestamp="1600352428">exampleHelperFlowChartPickPlaceRRT.sfx</file>
+    <file component="robotics" timestamp="1591712708">exampleHelperKINOVAGen3GripperCollRRT.mat</file>
+    <file component="robotics" timestamp="1591712708">exampleHelperSampleWGRPickPlace.m</file>
+    <file component="robotics" timestamp="1591712708">exampleHelperShelves.stl</file>
+  </demoitem>
+  <demoitem>
+    <source>ComputeInverseDynamicsFromAStaticJointConfigurationExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex61037069</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>LoadPredefinedRobotModelsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex61252398</metadata>
+    <thumbnail>html/LoadPredefinedRobotModelsExample_06.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateInverseKinematicsDesignerSessionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex61802753</metadata>
+    <thumbnail>html/CreateInverseKinematicsDesignerSessionExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1638282357">iksessiondata.mat</file>
+    <file component="robotics" timestamp="1644592707">collisionobject.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathForAUnicycleRobotInSimulinkExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex61851980</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1561573632">exampleMaps.mat</file>
+    <file component="robotics" timestamp="1570196393">pathPlanningUnicycleSimulinkModel.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>PickAndPlaceWorkflowUsingStateflowForMATLABExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex62350779</metadata>
+    <thumbnail>html/PickAndPlaceWorkflowUsingStateflowForMATLABExample_06.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>mpc</product>
+    <product>optim</product>
+    <product>stateflow</product>
+    <file component="robotics" timestamp="1606947003">exampleHelperFlowChartPickPlace.sfx</file>
+    <file component="robotics" timestamp="1591708993">exampleCommandActivateGripper.m</file>
+    <file component="robotics" timestamp="1591708993">exampleCommandBuildWorld.m</file>
+    <file component="robotics" timestamp="1576522074">exampleCommandClassifyParts.m</file>
+    <file component="robotics" timestamp="1591708993">exampleCommandComputeGraspPose.m</file>
+    <file component="robotics" timestamp="1591708993">exampleCommandDetectParts.m</file>
+    <file component="robotics" timestamp="1591708993">exampleCommandMoveToTaskConfig.m</file>
+    <file component="robotics" timestamp="1591708993">exampleCommandPickingLogic.m</file>
+    <file component="robotics" timestamp="1591708993">exampleHelperCoordinatorPickPlace.m</file>
+    <file component="robotics" timestamp="1591708993">exampleHelperKINOVAGen3GripperColl.mat</file>
+    <file component="robotics" timestamp="1591708993">exampleHelperPlanExecuteTrajectoryPickPlace.m</file>
+    <file component="robotics" timestamp="1591708993">exampleHelperTimeBasedStateInputsPickPlace.m</file>
+    <file component="robotics" timestamp="1591967875">RobotiqMeshLicense.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>UseCustomTimeScalingForATransformTrajectoryExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex62438015</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1603755621">custom_time_scaling_transform.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateDependenciesForUserdefinedGazeboCustomMessageExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex62907275</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PerformPickandPlaceInRobotScenarioExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex63127932</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>LoadProvidedRobotModelExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex63456449</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>GeneratePointCloudsFromMeshExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex63921654</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathForManipulatorRobotUsingRRTExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex65069254</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>ConfigureGazeboAndSimulinkForCosimulationOfManipulatorsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex65142371</metadata>
+    <thumbnail>html/ConfigureGazeboAndSimulinkForCosimulationOfManipulatorsExample_02.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1662628181">gazeboCosimControl.slx</file>
+    <file component="robotics" timestamp="1662628181">Ur10BasicWithPlugin.world</file>
+    <file component="robotics" timestamp="1662628181">custom_busobjects_basic.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>SolveInverseKinematicsForAFourBarLinkageExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex65211139</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>ComputeForwardDynamicsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex65908331</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>IntelligentBinPickingExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex66390982</metadata>
+    <thumbnail>html/IntelligentBinPickingExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>vision</product>
+    <product>sl3d</product>
+    <product>posemaskrcnn</product>
+    <product>maskrcnn</product>
+    <file component="robotics" timestamp="1721376902">Bin_STL_Scaled.stl</file>
+    <file component="robotics" timestamp="1724077858">CHOMP_Trajectory_Planner_Module.slx</file>
+    <file component="robotics" timestamp="1721376902">Contopptraj.m</file>
+    <file component="robotics" timestamp="1721376902">Epick_MW_2.STL</file>
+    <file component="robotics" timestamp="1721376902">GripperTypeEnum.m</file>
+    <file component="robotics" timestamp="1721376902">IO_coupling_MW.STL</file>
+    <file component="robotics" timestamp="1724077858">IntelligentBinPicking_Harness.slx</file>
+    <file component="robotics" timestamp="1721376902">Interpolation.m</file>
+    <file component="robotics" timestamp="1721376902">Ishape.ply</file>
+    <file component="robotics" timestamp="1721376902">Ishape.stl</file>
+    <file component="robotics" timestamp="1721376902">LoadBuses.m</file>
+    <file component="robotics" timestamp="1721376902">Lshape.ply</file>
+    <file component="robotics" timestamp="1721376902">Lshape.stl</file>
+    <file component="robotics" timestamp="1721376902">MotionPlannerCHOMP.m</file>
+    <file component="robotics" timestamp="1721376902">ObjectTypesID.m</file>
+    <file component="robotics" timestamp="1721376902">PickAndPlaceModes.m</file>
+    <file component="robotics" timestamp="1721376902">PoseMaskRCNNModel.m</file>
+    <file component="robotics" timestamp="1724077858">PosemaskRCNN_Detection_Module.slx</file>
+    <file component="robotics" timestamp="1729621739">Simulink_3D_IBP_Target.slx</file>
+    <file component="robotics" timestamp="1721376902">TargetEnvs.m</file>
+    <file component="robotics" timestamp="1721376902">Tshape.ply</file>
+    <file component="robotics" timestamp="1721376902">Tshape.stl</file>
+    <file component="robotics" timestamp="1721376902">Xshape.ply</file>
+    <file component="robotics" timestamp="1721376902">Xshape.stl</file>
+    <file component="robotics" timestamp="1721376902">bellow_small.stl</file>
+    <file component="robotics" timestamp="1721376902">binPickingStand_scaled.stl</file>
+    <file component="robotics" timestamp="1721376902">enumCmd.m</file>
+    <file component="robotics" timestamp="1721376902">exampleHelperAddGripper.m</file>
+    <file component="robotics" timestamp="1721376902">extention_tube.stl</file>
+    <file component="robotics" timestamp="1729621739">generateParam.mat</file>
+    <file component="robotics" timestamp="1721376902">getGripperType.m</file>
+    <file component="robotics" timestamp="1721376902">initRobotModelParam.m</file>
+    <file component="robotics" timestamp="1721376902">loadJointTrajectoryBus.m</file>
+    <file component="robotics" timestamp="1721376902">loadMotionPlannerCollisionObjectBus.m</file>
+    <file component="robotics" timestamp="1721376902">loadMotionPlannerCommandBus.m</file>
+    <file component="robotics" timestamp="1721376902">loadMotionPlannerResponseBus.m</file>
+    <file component="robotics" timestamp="1721376902">loadMotionPlannerTaskBus.m</file>
+    <file component="robotics" timestamp="1721376902">loadObjectDetectorResponseBus.m</file>
+    <file component="robotics" timestamp="1721376902">loadRobotCommandBus.m</file>
+    <file component="robotics" timestamp="1721376902">loadRobotFeedbackBus.m</file>
+    <file component="robotics" timestamp="1721376902">loadRobotParameters.m</file>
+    <file component="robotics" timestamp="1721376902">loadUserCommandBus.m</file>
+    <file component="robotics" timestamp="1724077858">pointCloudModels.mat</file>
+    <file component="robotics" timestamp="1721376902">table_solid_scaled.stl</file>
+    <file component="robotics" timestamp="1721376902">exampleHelperSelectPartForMEXPlanner.m</file>
+    <file component="robotics" timestamp="1721376902">exampleHelperCHOMPMotionPlanner_mex.mexw64</file>
+    <file component="robotics" timestamp="1707991062">exampleHelperDownloadData.m</file>
+    <file component="robotics" timestamp="1724077858">exampleHelperCHOMPMotionPlanner_mex.mexmaci64</file>
+    <file component="robotics" timestamp="1724077858">exampleHelperCHOMPMotionPlanner_mex.mexa64</file>
+    <file component="robotics" timestamp="1724077858">exampleHelperAttachPartAtEndEffector.m</file>
+    <file component="robotics" timestamp="1724077858">exampleHelperApproximateCollisionBoxSpheresBinPicking.m</file>
+    <file component="robotics" timestamp="1724077858">exampleHelperCHOMPMotionPlanner.m</file>
+    <file component="robotics" timestamp="1721408768">exampleHelperGenerateCollisionEnvironmentInPlanner.m</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateCollisionObjectsForManipulatorCollisionCheckingExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex67154714</metadata>
+    <thumbnail>html/CreateCollisionObjectsForManipulatorCollisionCheckingExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>DesignTrajectoryPlannerForIntelligentBinPickingExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex68247176</metadata>
+    <thumbnail>html/DesignTrajectoryPlannerForIntelligentBinPickingExample_04.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1720796246">loadMotionPlannerCollisionObjectBus.m</file>
+    <file component="robotics" timestamp="1720796246">loadMotionPlannerCommandBus.m</file>
+    <file component="robotics" timestamp="1720796246">loadMotionPlannerResponseBus.m</file>
+    <file component="robotics" timestamp="1720796246">loadMotionPlannerTaskBus.m</file>
+    <file component="robotics" timestamp="1720796246">loadJointTrajectoryBus.m</file>
+    <file component="robotics" timestamp="1720796246">Contopptraj.m</file>
+    <file component="robotics" timestamp="1720796246">GripperTypeEnum.m</file>
+    <file component="robotics" timestamp="1720796246">exampleHelperAddGripper.m</file>
+    <file component="robotics" timestamp="1720796246">getGripperType.m</file>
+    <file component="robotics" timestamp="1720796246">Interpolation.m</file>
+    <file component="robotics" timestamp="1720796246">MotionPlannerCHOMP.m</file>
+    <file component="robotics" timestamp="1723146047">CHOMP_Trajectory_Planner_Module.slx</file>
+    <file component="robotics" timestamp="1720796246">loadRobotParameters.m</file>
+    <file component="robotics" timestamp="1720796246">bellow_small.stl</file>
+    <file component="robotics" timestamp="1720796246">Bin_STL_Scaled.stl</file>
+    <file component="robotics" timestamp="1720796246">binPickingStand_scaled.stl</file>
+    <file component="robotics" timestamp="1720796246">Epick_MW_2.STL</file>
+    <file component="robotics" timestamp="1720796246">extention_tube.stl</file>
+    <file component="robotics" timestamp="1720796246">IO_coupling_MW.STL</file>
+    <file component="robotics" timestamp="1720796246">Ishape.stl</file>
+    <file component="robotics" timestamp="1720796246">Lshape.stl</file>
+    <file component="robotics" timestamp="1720796246">table_solid_scaled.stl</file>
+    <file component="robotics" timestamp="1720796246">Tshape.stl</file>
+    <file component="robotics" timestamp="1720796246">Xshape.stl</file>
+    <file component="robotics" timestamp="1720796246">ObjectTypesID.m</file>
+    <file component="robotics" timestamp="1720796246">TargetEnvs.m</file>
+    <file component="robotics" timestamp="1720796246">exampleHelperCHOMPMotionPlanner_mex.mexw64</file>
+    <file component="robotics" timestamp="1723146047">TrajectoryPlanning_Harness.slx</file>
+    <file component="robotics" timestamp="1723146047">exampleHelperCHOMPMotionPlanner.m</file>
+    <file component="robotics" timestamp="1721408768">exampleHelperGenerateCollisionEnvironmentInPlanner.m</file>
+    <file component="robotics" timestamp="1721408768">initRobotModelParam_Planner.m</file>
+    <file component="robotics" timestamp="1721408768">loadPlannerBuses.m</file>
+    <file component="robotics" timestamp="1723146047">exampleHelperCHOMPMotionPlanner_mex.mexa64</file>
+    <file component="robotics" timestamp="1723146047">exampleHelperCHOMPMotionPlanner_mex.mexmaci64</file>
+    <file component="robotics" timestamp="1723146047">generateMEXforPlanner.m</file>
+    <file component="robotics" timestamp="1723146047">exampleHelperAttachPartAtEndEffector.m</file>
+    <file component="robotics" timestamp="1723146047">exampleHelperApproximateCollisionBoxSpheresBinPicking.m</file>
+    <workFolder>IBPPlanning</workFolder>
+  </demoitem>
+  <demoitem>
+    <source>ComputeGeometricJacboianForManipulatorsInSimulinkExample</source>
+    <type>M-file</type>
+    <extension>m</extension>
+    <metadata>ex69282787</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <file component="robotics" timestamp="1531831804">get_jacobian_example.slx</file>
+    <file component="robotics" timestamp="1516222458">exampleLBR.mat</file>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>DesignPositionControlledManipulatorUsingSimscapeExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex69362090</metadata>
+    <thumbnail>html/DesignPositionControlledManipulatorUsingSimscapeExample_10.png</thumbnail>
+    <sandboxPublished/>
+    <product>robotics</product>
+    <product>robot_library_data_spkg</product>
+    <product>simulink</product>
+    <product>simscapemultibody</product>
+    <product>matlab</product>
+    <product>simscape</product>
+    <file component="robotics" timestamp="1641483094">ManipulatorPositionControl.slx</file>
+    <file component="robotics" timestamp="1641483094">helperInstrumentSMModels.m</file>
+  </demoitem>
+  <demoitem>
+    <source>SampleMultiplePosesInAWorkspaceGoalRegionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex69773441</metadata>
+    <thumbnail>html/SampleMultiplePosesInAWorkspaceGoalRegionExample_05.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateATaskSpaceMotionModelExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex69812504</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>ComputeJointTorquesToBalanceAnEndpointForceAndMomentExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex70048242</metadata>
+    <thumbnail>html/ComputeJointTorquesToBalanceAnEndpointForceAndMomentExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>InterpolateWithBSplineExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex70564621</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>AddAndResolveConstraintsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex70681593</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>UseSceneCanvasAndMoveRobotExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex70834999</metadata>
+    <thumbnail>html/UseSceneCanvasAndMoveRobotExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1644592291">iksessiondata.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PickAndPlaceUsingRRTExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex70865333</metadata>
+    <thumbnail>html/PickAndPlaceUsingRRTExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1594696562">exampleHelperLoadPickAndPlaceRRT.m</file>
+  </demoitem>
+  <demoitem>
+    <source>TuneTheNumberOfNodesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex72866721</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1520608552">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>DisplayARobotModelWithVisualGeometriesAsSTLFilesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex72901976</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>SimulateMiningScenarioInUnrealEngineEnvironmentExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex73482836</metadata>
+    <thumbnail>html/SimulateMiningScenarioInUnrealEngineEnvironmentExample_05.gif</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1721134006">openPitMineScene.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>AddMeshesToRobotScenarioExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex74121653</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>AvoidObstaclesUsingReinforcementLearningForMobileRobotsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex74340740</metadata>
+    <thumbnail>html/AvoidObstaclesUsingReinforcementLearningForMobileRobotsExample_07.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1683898198">exampleHelperAvoidObstaclesAgent.mat</file>
+    <file component="robotics" timestamp="1683898198">exampleHelperAvoidObstaclesMobileRobot.slx</file>
+    <file component="robotics" timestamp="1575168938">exampleHelperAvoidObstaclesPosePlot.m</file>
+    <file component="robotics" timestamp="1573660199">exampleHelperRLAvoidObstaclesResetFcn.m</file>
+    <file component="robotics" timestamp="1575168938">exampleMaps.mat</file>
+    <file component="robotics" timestamp="1582120399">exampleHelperOfficeAreaMap.mat</file>
+    <file component="robotics" timestamp="1683898198">exampleHelperAvoidObstaclesRangeSensor.m</file>
+  </demoitem>
+  <demoitem>
+    <source>PlotAckermannDriveVehicleInSimulinkExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex75227873</metadata>
+    <thumbnail>html/PlotAckermannDriveVehicleInSimulinkExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1658155365">plotAckermannDriveSimulinkModel.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>InteractivelyBuildAndPlaybackASeriesOfRobotConfExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex75859877</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>GenerateCodeHeterogeneousAndVariableSizedEnvironmentExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex76065578</metadata>
+    <thumbnail>html/GenerateCodeHeterogeneousAndVariableSizedEnvironmentExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>matlabcoder</product>
+    <file component="robotics" timestamp="1637333180">exampleHelperCollisionEnum.m</file>
+    <file component="robotics" timestamp="1678987620">exampleHelperVisualizeVarSizeEnvironment.m</file>
+    <file component="robotics" timestamp="1678987620">exampleHelperVariableHeterogeneousPlanner.m</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateTrajectoryUsingiRBTExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex76651811</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1594846384">wayPts.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateCapsuleApproximationOfRobotModelExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex76708818</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>TuneTheConnectionDistanceExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex77583502</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1520608552">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PerformCoSimulationBetweenMATLABAndGazeboExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex77880683</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>ExportModifiedURDFDetailsWithPackagedMeshFilesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex77955820</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>BuildBasicRigidBodyTreeModelsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex78671270</metadata>
+    <thumbnail>html/BuildBasicRigidBodyTreeModelsExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PR2ManipulationExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex78756496</metadata>
+    <thumbnail>html/PR2ManipulationExample_02.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>ros</product>
+    <file component="robotics" timestamp="1521042578">pr2_right_arm_ready.png</file>
+    <file component="robotics" timestamp="1521042578">pr2_left_arm_ready.png</file>
+    <file component="robotics" timestamp="1521042578">exampleHelperWGPR2Kinect.m</file>
+    <file component="robotics" timestamp="1521042578">exampleHelperJointMsgToStruct.m</file>
+    <file component="robotics" timestamp="1521042578">exampleHelperSendPR2GripperCommand.m</file>
+    <file component="robotics" timestamp="1521042578">exampleHelperShowEndEffectorPos.m</file>
+    <file component="robotics" timestamp="1521042578">pr2_snapshots.png</file>
+    <file component="robotics" timestamp="1521042578">pr2_ee_trajectory.png</file>
+    <file component="robotics" timestamp="1521042578">pr2_ini.png</file>
+  </demoitem>
+  <demoitem>
+    <source>ComputeTrapezoidalVelocityTrajectoryFor2DPlanarMotionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex78897046</metadata>
+    <thumbnail>html/ComputeTrapezoidalVelocityTrajectoryFor2DPlanarMotionExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>WorkspaceAnalysisForManipulatorsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex78898787</metadata>
+    <thumbnail>html/WorkspaceAnalysisForManipulatorsExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>FindInverseKinematicsSolutionsWithHighManipulabilityExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex78966041</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>ControlADifferentialDriveRobotInGazeboWithSimulinkExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex79624198</metadata>
+    <thumbnail>html/ControlADifferentialDriveRobotInGazeboWithSimulinkExample_01.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <file component="robotics" timestamp="1563284353">GazeboDifferentialDriveControl.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>ValidateStateAndMotionForManipulatorStateSpaceExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex80048516</metadata>
+    <thumbnail>html/ValidateStateAndMotionForManipulatorStateSpaceExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>InterpolateBetweenSE3TransformationsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex80210225</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>InstallAddonsForRoboticsSytemToolboxTMExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex80770776</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PathPlanningExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex82706994</metadata>
+    <thumbnail>html/PathPlanningExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1703072356">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>TrackTaskSpaceTrajectoriesWithTimeScalingExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex82982985</metadata>
+    <thumbnail>html/TrackTaskSpaceTrajectoriesWithTimeScalingExample_04.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>SolveGeneralizedInverseKinematicsForASetOfConstraintsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex83015529</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>PlotPathOfAnBicycleKinematicRobotExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex83043049</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>DesignABinPickingSceneInUnrealEngineExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex84100711</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>sl3d</product>
+    <file component="robotics" timestamp="1718850230">bellow_small.stl</file>
+    <file component="robotics" timestamp="1718850230">Bin_STL_Scaled.stl</file>
+    <file component="robotics" timestamp="1718850230">binPickingStand_scaled.stl</file>
+    <file component="robotics" timestamp="1718850230">Epick_MW_2.STL</file>
+    <file component="robotics" timestamp="1718850230">IO_coupling_MW.STL</file>
+    <file component="robotics" timestamp="1718850230">Ishape.stl</file>
+    <file component="robotics" timestamp="1718850230">Lshape.stl</file>
+    <file component="robotics" timestamp="1727704380">Simulink_3D_IBP_Target.slx</file>
+    <file component="robotics" timestamp="1718850230">table_solid_scaled.stl</file>
+    <file component="robotics" timestamp="1718850230">Tshape.stl</file>
+    <file component="robotics" timestamp="1718850230">Xshape.stl</file>
+    <file component="robotics" timestamp="1718850230">GripperTypeEnum.m</file>
+    <file component="robotics" timestamp="1721405436">initRobotModelParams_SL3DTarget.m</file>
+    <file component="robotics" timestamp="1721405436">loadTargetBuses.m</file>
+    <file component="robotics" timestamp="1719508401">exampleHelperAddGripper.m</file>
+    <file component="robotics" timestamp="1719508401">extention_tube.stl</file>
+    <file component="robotics" timestamp="1719508401">loadRobotParameters.m</file>
+    <file component="robotics" timestamp="1719508401">ObjectTypesID.m</file>
+    <file component="robotics" timestamp="1719571429">loadRobotCommandBus.m</file>
+    <file component="robotics" timestamp="1719571429">loadRobotFeedbackBus.m</file>
+    <file component="robotics" timestamp="1719571429">enumCmd.m</file>
+    <file component="robotics" timestamp="1719571429">loadUserCommandBus.m</file>
+    <file component="robotics" timestamp="1719508401">loadMotionPlannerCollisionObjectBus.m</file>
+    <file component="robotics" timestamp="1719508401">loadMotionPlannerCommandBus.m</file>
+    <file component="robotics" timestamp="1719508401">loadMotionPlannerResponseBus.m</file>
+    <file component="robotics" timestamp="1719508401">loadMotionPlannerTaskBus.m</file>
+    <file component="robotics" timestamp="1719508401">loadJointTrajectoryBus.m</file>
+    <file component="robotics" timestamp="1719508401">TargetEnvs.m</file>
+    <file component="robotics" timestamp="1728044007">generateParam.mat</file>
+    <file component="robotics" timestamp="1719571429">Ishape.ply</file>
+    <file component="robotics" timestamp="1719571429">Lshape.ply</file>
+    <file component="robotics" timestamp="1719571429">Tshape.ply</file>
+    <file component="robotics" timestamp="1719571429">Xshape.ply</file>
+    <file component="robotics" timestamp="1727704380">BinPickingScene_Harness.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>OptimizeCollisionFreeTrajectoryWithCHOMPExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex84184440</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>InverseKinematicsForRobotsWithFloatingBaseExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex85152258</metadata>
+    <thumbnail>html/InverseKinematicsForRobotsWithFloatingBaseExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>ComputeVelocityProductForManipulatorsInSimulinkExample</source>
+    <type>M-file</type>
+    <extension>m</extension>
+    <metadata>ex85235236</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1532045279">velocity_product_example.slx</file>
+    <file component="robotics" timestamp="1516222458">exampleLBR.mat</file>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>CalculateManipulatorGravityDynamicsUsingSimulinkExample</source>
+    <type>M-file</type>
+    <extension>m</extension>
+    <metadata>ex85296841</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <file component="robotics" timestamp="1531831615">gravity_dynamics_model.slx</file>
+    <file component="robotics" timestamp="1516222458">exampleLBR.mat</file>
+    <file component="robotics" timestamp="1531829807">iiwa_stack.rights</file>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathForADifferentialRobotInSimulinkExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex85534515</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <file component="robotics" timestamp="1565970559">pathPlanningSimulinkModel.slx</file>
+    <file component="robotics" timestamp="1575168938">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ChooseATrajectoryForAManipulatorApplicationExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex85801048</metadata>
+    <thumbnail>html/ChooseATrajectoryForAManipulatorApplicationExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1625466958">helperPlotTaskSpaceTraj.m</file>
+    <file component="robotics" timestamp="1623783135">helperProfileForMaxVel.m</file>
+    <file component="robotics" timestamp="1619576154">helperCreateControlPointsFromWaypoints.m</file>
+    <file component="robotics" timestamp="1623875994">helperPlotJointSpaceTraj.m</file>
+  </demoitem>
+  <demoitem>
+    <source>DesignROSInterfaceForIntelligentBinPickingExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex85816533</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>ros</product>
+  </demoitem>
+  <demoitem>
+    <source>MobileRobotKinematicsEquationsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex87656459</metadata>
+    <thumbnail>html/MobileRobotKinematicsEquationsExample_03.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <noButton/>
+  </demoitem>
+  <demoitem>
+    <source>PlanAndExecuteTaskAndJointSpaceTrajectoriesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex88446394</metadata>
+    <thumbnail>html/PlanAndExecuteTaskAndJointSpaceTrajectoriesExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1563330261">exampleHelperTimeBasedJointInputs.m</file>
+    <file component="robotics" timestamp="1563330261">exampleHelperTimeBasedTaskInputs.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ComputeBSplineTrajectoryFor2DPlanarMotionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex88966445</metadata>
+    <thumbnail>html/ComputeBSplineTrajectoryFor2DPlanarMotionExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateAndSimulateRobotScenarioExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex89846013</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>SkipSpecificBodyPairsForCollisionCheckingExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex90082098</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PlotPathOfAnDifferentialDriveKinematicRobotExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex90971921</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>SpecifyDynamicsPropertiesToRigidBodyTreeExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex90973478</metadata>
+    <thumbnail>html/SpecifyDynamicsPropertiesToRigidBodyTreeExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>ModelFloatingBaseRobotUsingFloatingJointExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex90997679</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathToAWorkspaceGoalRegionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex92705138</metadata>
+    <thumbnail>html/PlanPathToAWorkspaceGoalRegionExample_04.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>Create2DBinaryOccupancyMapFromRobotScenarioExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex93005109</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateAJointSpaceMotionModelExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex94171063</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>MatchLidarScansExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex94263367</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>SimulateUltrasonicSensorsMountedOnMobileRobotsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex94382540</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>driving</product>
+    <file component="robotics" timestamp="1654258943">CustomUltrasonicSensor.m</file>
+    <file component="robotics" timestamp="1658244519">exampleHelperPlotDetectionPoint.m</file>
+    <file component="robotics" timestamp="1658244519">exampleHelperPlotFOVCylinder.m</file>
+  </demoitem>
+  <demoitem>
+    <source>PickAndPlaceUsingCHOMPForManipulatorsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex94417699</metadata>
+    <thumbnail>html/PickAndPlaceUsingCHOMPForManipulatorsExample_12.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1698749162">exampleHelperVisualizePlaceTrajectory.m</file>
+    <file component="robotics" timestamp="1698749162">exampleHelperVisualizePickTrajectory.m</file>
+    <file component="robotics" timestamp="1704827096">exampleHelperLoadPickAndPlaceCHOMP.m</file>
+    <file component="robotics" timestamp="1673821865">exampleHelperApproximateCollisionCylinderSpheres.m</file>
+    <file component="robotics" timestamp="1673821865">exampleHelperApproximateCollisionBoxSpheres.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ReadAnOccupancyGridMessageFromROSExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex94864383</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>ChangeSelfCollisionCheckingBehaviorExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex96174438</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1659969803">exampleHelperCreate2ArmRBT.m</file>
+  </demoitem>
+  <demoitem>
+    <source>TaskSpaceMotionModelTopicExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex96354928</metadata>
+    <thumbnail>html/TaskSpaceMotionModelTopicExample_03.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+  </demoitem>
+  <demoitem>
+    <source>PerformSafeTrajectoryTrackingRoboticsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex96708497</metadata>
+    <thumbnail>html/PerformSafeTrajectoryTrackingRoboticsExample_01.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <product>simscape</product>
+    <product>simscapemultibody</product>
+    <product>simulink</product>
+    <file component="robotics" timestamp="1719580758">robotSafeTrajectoryTracking.slx</file>
+    <file component="robotics" timestamp="1521491188">sawyer_visualization.png</file>
+    <file component="robotics" timestamp="1521491188">sawyer_anime_scope_no_trajectoryScaling.png</file>
+    <file component="robotics" timestamp="1521491188">sawyer_anime_scope_trajectoryScaling.png</file>
+    <file component="robotics" timestamp="1521491188">sawyer_contact_mechanics.png</file>
+    <file component="robotics" timestamp="1521491188">sawyer_desired_motion.png</file>
+    <file component="robotics" timestamp="1521491188">sawyer_external_torque_observer.png</file>
+    <file component="robotics" timestamp="1521491188">sawyer_initial_target_configurations.png</file>
+    <file component="robotics" timestamp="1521491188">sawyer_toggle_switch_off.png</file>
+    <file component="robotics" timestamp="1521491188">sawyer_trajectory_scaling.png</file>
+    <file component="robotics" timestamp="1521491188">sawyer_viewer_icon.png</file>
+    <file component="robotics" timestamp="1531835647">sawyer_robot.rights</file>
+    <file component="robotics" timestamp="1719580758">exampleHelperLoadSawyerMesh.m</file>
+    <file component="robotics" timestamp="1603320662">ExampleHelperSimulationRateControl.m</file>
+  </demoitem>
+  <demoitem>
+    <source>PlotWorkspaceOfRobotManipulatorExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex98450930</metadata>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1714569325">exampleHelperCreateWorkbench.m</file>
+  </demoitem>
+  <demoitem>
+    <source>PlanAPathForAManipulatorInSimulinkExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex99464922</metadata>
+    <thumbnail>html/PlanAPathForAManipulatorInSimulinkExample_04.png</thumbnail>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1688002466">helperCreateCollisionEnv.m</file>
+    <file component="robotics" timestamp="1704596698">manipulatorPathPlannerSystem.slx</file>
+    <file component="robotics" timestamp="1690109001">helperVisualizeConfigs.m</file>
+    <workFolder>slmanipplanner</workFolder>
+  </demoitem>
+  <demoitem>
+    <source>ControlManipulatorRobotWithCosimulationInGazeboExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex99758004</metadata>
+    <thumbnail>html/ControlManipulatorRobotWithCosimulationInGazeboExample_18.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>robotics</product>
+    <file component="robotics" timestamp="1588888512">custom_busobjects_basic.mat</file>
+    <file component="robotics" timestamp="1602533236">gazeboCosimControl.slx</file>
+    <file component="robotics" timestamp="1602200334">Ur10BasicWithPlugin.world</file>
+  </demoitem>
+</demos>
