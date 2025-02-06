@@ -254,14 +254,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\base_link.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\base_link.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -274,14 +274,14 @@
     <visual>
       <origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Wagon_slider_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Wagon_slider_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Wagon_slider_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Wagon_slider_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -294,14 +294,14 @@
     <visual>
       <origin xyz="-0.0 -0.0 0.01" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/J0_roll_v2_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\J0_roll_v2_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.0 -0.0 0.01" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/J0_roll_v2_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\J0_roll_v2_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -314,14 +314,14 @@
     <visual>
       <origin xyz="0.0745 -0.0 0.118" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/J1_pitch_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\J1_pitch_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="0.0745 -0.0 0.118" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/J1_pitch_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\J1_pitch_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -334,14 +334,14 @@
     <visual>
       <origin xyz="-0.0 0.0203 1.331" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/J2_prismatic_v2_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\J2_prismatic_v2_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.0 0.0203 1.331" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/J2_prismatic_v2_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\J2_prismatic_v2_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -354,14 +354,14 @@
     <visual>
       <origin xyz="-0.0 0.0158 0.015" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/80I_v2_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\80I_v2_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.0 0.0158 0.015" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/80I_v2_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\80I_v2_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -374,14 +374,14 @@
     <visual>
       <origin xyz="-0.03 0.0579 0.6843" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/80mm_Connector_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\80mm_Connector_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.03 0.0579 0.6843" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/80mm_Connector_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\80mm_Connector_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -394,14 +394,14 @@
     <visual>
       <origin xyz="-0.03 0.0579 0.6943" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Ph17_v3_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Ph17_v3_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.03 0.0579 0.6943" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Ph17_v3_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Ph17_v3_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -414,14 +414,14 @@
     <visual>
       <origin xyz="-0.03 0.0579 0.7853" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Ph17_v5_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Ph17_v5_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.03 0.0579 0.7853" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Ph17_v5_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Ph17_v5_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -434,14 +434,14 @@
     <visual>
       <origin xyz="-0.03 0.0579 0.8103" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/80mm_Connector_v1_2.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\80mm_Connector_v1_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.03 0.0579 0.8103" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/80mm_Connector_v1_2.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\80mm_Connector_v1_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -454,14 +454,14 @@
     <visual>
       <origin xyz="-0.03 0.0579 0.8203" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/80I_v7_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\80I_v7_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.03 0.0579 0.8203" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/80I_v7_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\80I_v7_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -474,14 +474,14 @@
     <visual>
       <origin xyz="-0.0894 0.0579 0.8873" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/80I_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\80I_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.0894 0.0579 0.8873" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/80I_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\80I_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -494,14 +494,14 @@
     <visual>
       <origin xyz="-0.1224 0.0579 0.9593" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/70mm_Connector_v8_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\70mm_Connector_v8_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.1224 0.0579 0.9593" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/70mm_Connector_v8_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\70mm_Connector_v8_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -514,14 +514,14 @@
     <visual>
       <origin xyz="-0.1224 0.0579 0.9693" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Ph14_v3_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Ph14_v3_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.1224 0.0579 0.9693" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Ph14_v3_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Ph14_v3_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -534,14 +534,14 @@
     <visual>
       <origin xyz="-0.1224 0.0579 1.0566" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Ph_14_v5_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Ph_14_v5_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.1224 0.0579 1.0566" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Ph_14_v5_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Ph_14_v5_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -554,14 +554,14 @@
     <visual>
       <origin xyz="-0.1224 0.0579 1.0816" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/70mm_Short_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\70mm_Short_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.1224 0.0579 1.0816" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/70mm_Short_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\70mm_Short_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -574,14 +574,14 @@
     <visual>
       <origin xyz="-0.1224 0.0579 1.1716" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/70I_v3_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\70I_v3_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.1224 0.0579 1.1716" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/70I_v3_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\70I_v3_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -594,14 +594,14 @@
     <visual>
       <origin xyz="-0.1786 0.0579 1.2336" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/70I_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\70I_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.1786 0.0579 1.2336" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/70I_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\70I_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -614,14 +614,14 @@
     <visual>
       <origin xyz="-0.2116 0.0579 1.3006" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/70mm_Connector_v8__1__1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\70mm_Connector_v8__1__1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.2116 0.0579 1.3006" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/70mm_Connector_v8__1__1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\70mm_Connector_v8__1__1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -634,14 +634,14 @@
     <visual>
       <origin xyz="-0.2116 0.0579 1.3106" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Ph14_v3__1__1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Ph14_v3__1__1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.2116 0.0579 1.3106" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Ph14_v3__1__1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Ph14_v3__1__1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -654,14 +654,14 @@
     <visual>
       <origin xyz="-0.2116 0.0579 1.3979" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Ph_14_v5__1__1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Ph_14_v5__1__1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.2116 0.0579 1.3979" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Ph_14_v5__1__1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Ph_14_v5__1__1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -674,14 +674,14 @@
     <visual>
       <origin xyz="-0.2116 0.0579 1.4229" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/70mm_Short_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\70mm_Short_v1__1__1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.2116 0.0579 1.4229" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/70mm_Short_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\70mm_Short_v1__1__1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -694,14 +694,14 @@
     <visual>
       <origin xyz="-0.2116 0.0579 1.5249" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Ph11_v5_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Ph11_v5_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.2116 0.0579 1.5249" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Ph11_v5_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Ph11_v5_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -714,14 +714,14 @@
     <visual>
       <origin xyz="-0.2116 0.0579 1.7039" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Tool_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Tool_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.2116 0.0579 1.7039" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="C:\Users\atjensvo\cernbox\Documents\MATLAB\Collision_test_description/meshes/Tool_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="C:\Users\atjensvo\cernbox\Documents\GitHub\MasterThesis\MATLAB\Collision_test_description\meshes\Tool_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
