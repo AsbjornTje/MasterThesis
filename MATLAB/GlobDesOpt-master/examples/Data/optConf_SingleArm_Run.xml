@@ -1,0 +1,44 @@
+<optDesConf
+    solver="BayesOpt"
+Accept_rate="0.6"
+MaxIter="100"
+Npnts_WS="50*1e03"
+popSize="50"
+NumSeed_BO="1000"
+cost_fcn = "MaxDextVolume"
+>
+    
+    <Robot1 nj="4" origin="[0 0 0]" rpy="[0 0 0]">
+        <DH_tab_path name="DH_tab_SingleArm_Run.txt" /> 
+        <joints 
+            types="prrr"
+            l_bounds="[0 -45 -45 -45]"
+            u_bounds="[10 45 45 45]"/>
+        <d_idx idx="[1]"
+               l_bounds="[0]"
+               u_bounds="[10]"/>
+        <theta_idx idx=""        
+                   l_bounds=""
+                   u_bounds=""/>
+        <a_idx idx="[2]"         
+               l_bounds="[3]"
+               u_bounds="[25]"/>
+        <alpha_idx idx=""         
+                   l_bounds=""
+                   u_bounds=""/>
+        <jnt_idx idx="[1 4]"         
+                 l_p_bounds="[0 0]"
+                 u_p_bounds="[10 10]"
+                 l_r_bounds="[-45 -45]"
+                 u_r_bounds="[45 45]"/>
+    </Robot1>
+    
+    <dual_arm
+        copy="false" 
+        dist_idx=""
+        l_bounds =""
+        u_bounds = ""
+        />
+        
+    
+</optDesConf>
