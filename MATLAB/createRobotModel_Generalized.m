@@ -1,26 +1,6 @@
 function [robot] = createRobotModel_Generalized(dhparams, jointTypes, q_home)
-% createRobotModel_Generalized Constructs a rigidBodyTree robot using input DH parameters.
-%
-%   [robot] = createRobotModel_Generalized(dhparams, jointTypes, q_home) builds a
-%   robot model from the provided DH parameter matrix and joint types, and attaches
-%   collision and visual geometry based on the DH parameters.
-%
-%   The DH parameter matrix (dhparams) is an N-by-4 matrix with rows:
-%       [a, alpha, d, theta]
-%
-%   For each body (except the base), this function checks:
-%     - If the d parameter (translation along z) is nonzero, it creates a cylinder
-%       with height = |d| and attaches it along the z-axis.
-%     - If the a parameter (translation along x) is nonzero, it creates a cylinder
-%       with height = |a| and attaches it along the x-axis (by applying a -90° rotation
-%       about the y-axis).
-%
-%   The output robot is a rigidBodyTree with the collision and visual geometries attached.
-%
-%   Example usage:
-%       robot = createRobotModel_Generalized(dhparams, jointTypes, q_home);
 
-    %% Build the robot (rigidBodyTree)
+%% Build the robot (rigidBodyTree)
     
     numJoints = size(dhparams, 1);
     bodies = cell(numJoints,1);

@@ -247,7 +247,7 @@ disp("Number of variables set for optimization: " + num2str(length(optVars)));
 % Print all variable names to see if we are missing any DOF parameters
 disp("Optimized Variables Names:");
 for i = 1:length(optVars)
-    disp(optVars{i}.name);
+    disp(optVars(i));
 end
 
 

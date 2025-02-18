@@ -155,6 +155,8 @@ for i = 1:length(Accept_rate)
     %plot results:
     Robots = generateRobots(x,Robots,Indexes);
     dual_arm_copy = Indexes{1}.dual_arm_copy;
+
+
     
 %     [dtsPs,shps,Vs,Safety] = getWSVolumes(Robots,dual_arm_copy,accept_rate,Npnts_WS,true);
     [dtsPs,shps,Vs,Safety,ave_dext] = getWSVolumes(Robots,dual_arm_copy,accept_rate,Npnts_WS,cost_fcn,true);
@@ -169,6 +171,7 @@ for i = 1:length(Accept_rate)
     saveas(figure(3),folder+"V_shp.fig")
     saveas(figure(4),folder+"V_patch.fig")
     saveas(figure(5),folder+"Robots.fig")
+    saveas(figure(6),folder+"Optimized_Robot.fig")
     save(folder+"ResOpt","Res")
     save(folder+"ParamsOpt","x")
     save(folder+"Robots","Robots")
@@ -193,7 +196,6 @@ else
         Cost(n_pop) = getCostFunction(xi,Robots_init,Indexes,acceptRate,Npnts_WS,cost_fcn,plot_en);
     end
 end
-
 
 end
 

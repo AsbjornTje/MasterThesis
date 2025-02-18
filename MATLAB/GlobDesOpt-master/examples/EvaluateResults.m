@@ -9,12 +9,14 @@ addpath("Data/")
 accept_rate = 0.6;
 Npnts_WS = 50*1e03;
 dual_arm_copy = true;
-cost_fcn = "MaxDualDext";
-% cost_fcn = "MaxDextVolume";
+%cost_fcn = "MaxDualDext";
+cost_fcn = "MaxDextVolume";
 
-folder = "Results_Matlab_Dual_BayesOPt_MaxDext/accept_"+ num2str(accept_rate*100);
+%folder = "Results_Matlab_Dual_BayesOPt_MaxDext/accept_"+ num2str(accept_rate*100);
 % folder = "Results_Matlab_Dual_ga_MaxDext/accept_"+ num2str(accept_rate*100);
 % folder = "Results_Matlab_Dual_pso_MaxDext/accept_"+ num2str(accept_rate*100);
+folder = "Results_Matlab_ga/accept_"+num2str(accept_rate*100);
+
 load(folder+"/Robots");
 load(folder+"/elapsed");
 

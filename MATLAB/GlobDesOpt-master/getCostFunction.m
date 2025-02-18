@@ -18,8 +18,26 @@ V = ave_dext*V;
 
 %with safety measure.
 SafetyVolume = max(V*Safety,1e-16);
-Cost = -log10(SafetyVolume);
+C_dexterity = -log10(SafetyVolume);
+
+ % Add goal pose error
+ goalPoses = [
+        -0.000, 1700, 500, 0, 1, 0, pi/2;  % Start
+        -476, 2015, -1400, 0, 1, 0, pi/2; % Front BLM
+];
+    
+ C_pose_error = computeGoalPoseError(Robots, goalPoses);
+
+%adjust weights
+w1 = 0.3;
+w2 = 0.7;
+
+Cost = w1 * C_dexterity + w2 * C_pose_error;
+
+%display endeffector error
+disp("Final Pose Error: " + num2str(C_pose_error));
 
 % disp("| Volume | "+num2str(Vs(3))+...
 %     " | Saefty | "+num2str(Safety));
 end
+

@@ -256,6 +256,32 @@ if plot_en == true
     box on
     grid on
     
+
+    %Plot optimized robot with goal poses and collision environment
+    figure(6)
+        clf
+        legend_str = [];
+        sgtitle("Optimized robot")
+        for i = 1:length(Robots)
+            q = zeros(Robots{i}.m_n_jnts,1);
+            name = "Robot_"+num2str(i);
+            Robots{i}.Visualize(q,name);
+            hold on
+            legend_str = [legend_str;{"Robot "+num2str(i)}];
+        end
+        daspect([1 1 1])
+        view(3);
+        axis tight
+        camlight
+        lighting gouraud
+        xlabel("x")
+        ylabel("y")
+        zlabel("z")
+        legend(legend_str)
+        box on
+        grid on
+    
+
 end
 
 end
