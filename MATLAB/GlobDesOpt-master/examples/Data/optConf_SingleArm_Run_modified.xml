@@ -5,7 +5,7 @@ MaxIter="100"
 Npnts_WS="50*1e03"
 popSize="50"
 NumSeed_BO="1000"
-cost_fcn = "MaxDextVolume"
+cost_fcn = "Minimize_d_with_goals"
 >
     
     <Robot1 nj="5" origin="[0 0 0]" rpy="[0 0 0]">

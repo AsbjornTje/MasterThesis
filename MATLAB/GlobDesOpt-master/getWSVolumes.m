@@ -4,6 +4,8 @@ if (cost_fcn == "MaxDextVolume")
 [dtsPs,shps,Vs,reaches,ave_dext] = generateWSRandom(Robots,dual_arm_copy,Npnts_WS,acceptRate,plot_en);
 elseif (cost_fcn == "MaxDualDext")
 [dtsPs,shps,Vs,reaches,ave_dext] = generateWS_DualDext(Robots,dual_arm_copy,Npnts_WS,acceptRate,plot_en);
+elseif (cost_fcn == "Minimize_d_with_goals")
+[dtsPs,shps,Vs,reaches,ave_dext] = generateWSRandom(Robots, dual_arm_copy, Npnts_WS, acceptRate, plot_en);
 end
 
 Safety = 1;

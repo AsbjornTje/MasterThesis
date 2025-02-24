@@ -38,6 +38,62 @@ end
 
 Robots = InitializeRobots(DH_tabs,joint_types,joint_limits,T_inits,dual_arm_copy);
 
+% Create a figure and axes for the interactive plot
+hFig = figure('Name','Interactive Robot Visualization');
+hAx = axes('Parent',hFig);
+hold(hAx,'on');
+grid(hAx,'on');
+
+% Get the number of joints for the first robot
+nJoints = Robots{1}.m_n_jnts;
+% Initial joint configuration (all zeros)
+q_init = zeros(nJoints,1);
+
+% Visualize the robot initially
+Robots{1}.Visualize(q_init, 'Interactive Robot');
+
+% Define slider parameters (adjust bounds as needed)
+slider_min = -pi; 
+slider_max = pi;
+slider_step = [0.01 0.1];
+
+% Create a panel for sliders
+hPanel = uipanel('Parent',hFig, 'Title', 'Joint Controls',...
+    'Units','normalized','Position',[0.75 0.1 0.2 0.8]);
+
+% Preallocate slider handles
+sliderHandles = gobjects(nJoints,1);
+
+% Create sliders for each joint
+for j = 1:nJoints
+    uicontrol('Parent', hPanel, 'Style','text',...
+        'Units','normalized','Position',[0.1, 0.9 - (j-1)*0.1, 0.8, 0.05],...
+        'String', sprintf('Joint %d', j));
+    
+    sliderHandles(j) = uicontrol('Parent', hPanel, 'Style','slider',...
+        'Min', slider_min, 'Max', slider_max, 'Value', q_init(j),...
+        'Units','normalized','Position',[0.1, 0.85 - (j-1)*0.1, 0.8, 0.05],...
+        'SliderStep', slider_step, ...
+        'Callback', @(src, event) updateRobotPlot());
+end
+
+% Callback function to update robot plot when a slider is moved
+function updateRobotPlot()
+    % Retrieve current joint values from all sliders
+    q = zeros(nJoints,1);
+    for k = 1:nJoints
+        q(k) = get(sliderHandles(k), 'Value');
+    end
+    % Update the robot visualization.
+    % It is important that your Visualize method updates the existing plot
+    % (e.g., by modifying patch objects) rather than creating a new figure each time.
+    Robots{1}.Visualize(q, 'Interactive Robot');
+end
+
+disp('Press Enter to start optimization');
+pause;
+    
+
 if solver.name == "BayesOpt"
     
     [optVars,Indexes] = setOptimizationVariablesBO(LinkLength_optInfos,JointType_optInfos,Distance_optInfo,dual_arm_copy);
@@ -155,6 +211,49 @@ for i = 1:length(Accept_rate)
     %plot results:
     Robots = generateRobots(x,Robots,Indexes);
     dual_arm_copy = Indexes{1}.dual_arm_copy;
+
+% 
+%     % Create a figure and axes for the interactive plot
+% hFig = figure('Name','Interactive Robot Visualization');
+% hAx = axes('Parent',hFig);
+% hold(hAx,'on');
+% grid(hAx,'on');
+% 
+% % Get the number of joints for the first robot
+% nJoints = Robots{1}.m_n_jnts;
+% % Initial joint configuration (all zeros)
+% q_init = zeros(nJoints,1);
+% 
+% % Visualize the robot initially
+% Robots{1}.Visualize(q_init, 'Interactive Robot');
+% 
+% % Define slider parameters (adjust bounds as needed)
+% slider_min = -pi; 
+% slider_max = pi;
+% slider_step = [0.01 0.1];
+% 
+% % Create a panel for sliders
+% hPanel = uipanel('Parent',hFig, 'Title', 'Joint Controls',...
+%     'Units','normalized','Position',[0.75 0.1 0.2 0.8]);
+% 
+% % Preallocate slider handles
+% sliderHandles = gobjects(nJoints,1);
+% 
+% % Create sliders for each joint
+% for j = 1:nJoints
+%     uicontrol('Parent', hPanel, 'Style','text',...
+%         'Units','normalized','Position',[0.1, 0.9 - (j-1)*0.1, 0.8, 0.05],...
+%         'String', sprintf('Joint %d', j));
+% 
+%     sliderHandles(j) = uicontrol('Parent', hPanel, 'Style','slider',...
+%         'Min', slider_min, 'Max', slider_max, 'Value', q_init(j),...
+%         'Units','normalized','Position',[0.1, 0.85 - (j-1)*0.1, 0.8, 0.05],...
+%         'SliderStep', slider_step, ...
+%         'Callback', @(src, event) updateRobotPlot());
+% end
+% 
+% disp('Press Enter to move to the next pose...');
+% pause;
 
 
     

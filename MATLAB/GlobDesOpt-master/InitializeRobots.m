@@ -50,7 +50,7 @@ end
 %     name = "Robot_"+num2str(i);
 %     Robots{i}.Visualize(q,name);
 %     hold on
-%     
+% 
 % end
 
 end

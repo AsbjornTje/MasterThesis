@@ -1,60 +1,35 @@
 clear all;
 clc;
 
-% Define DH parameters for each joint.
-% Each row is [a, alpha, d, theta] according to standard DH conventions.
-% For a revolute joint the joint variable is theta; for a prismatic joint, d is variable.
+% Specify DH parameters
 dhparams = [
-    0,-pi/2,0,0;
-    0, -pi/2, 10, 0;   % Joint 1: prismatic (link length = 1, with a base offset d = 0.2)
-    0.1, pi/2,   0.1, 0;   % Joint 2: revolute (link length = 1)
-    0.5, 0,   0, 0;   % Joint 3: revolute (link length = 1)
+    % a       alpha    d     theta
+       0     -pi/2    -0.306      0;
+       0     -pi/2   10      0;
+       0      pi/2   0.108     0;
+       0     -pi/2   0.061     0;
+       0      0     1.37     pi/2; %change this cylinder diameter to 0.061
+       0.097    0     0     0; % and this one
+       0     -pi/2    0.5    0; %min 0.194 max 0.6
+       0      pi/2    0.1     0; %min 0.81 max 0.15
+       0     -pi/2    0.5    0; %min 0.14 max 0.6
+       0      pi/2    0.1    0; %min 0.081 max 0.15
+       0        0      0.5    0; % min 0.14 max 0.6
 ];
 
-% Specify the joint types for each joint.
-% For example: joint 1 is revolute, joint 2 is prismatic, joint 3 is revolute.
-jointTypes = ["fixed", "prismatic", "revolute", "revolute"];
+% Define joint types and home configuration
+rev = "revolute";
+pris = "prismatic";
+fix = "fixed";
+jointTypes = [fix, pris, rev, rev, fix, pris, rev, rev, rev, rev, rev];
+q_home = [0 0 0 0 0 0 0 0 0];
+
 
 % Create a rigidBodyTree robot model.
-robot = rigidBodyTree("DataFormat", "row");
+robot = createRobotModel_Generalized(dhparams, jointTypes, q_home)
 
-% Loop over each joint to create bodies and joints.
-nJoints = size(dhparams,1);
-for i = 1:nJoints
-    % Extract the DH parameters for the i-th joint.
-    a     = dhparams(i, 1);
-    alpha = dhparams(i, 2);
-    d     = dhparams(i, 3);
-    theta = dhparams(i, 4);
-    
-    % Create a new rigid body with a unique name.
-    body = rigidBody(sprintf("body%d", i));
-    
-    % Create the joint using the specified type.
-    joint = rigidBodyJoint(sprintf("joint%d", i), jointTypes(i));
-    
-    % Set the fixed transform using the standard DH parameters.
-    % The vector is provided as [a, alpha, d, theta].
-    joint.setFixedTransform([a, alpha, d, theta], "dh");
-    
-    % Attach the joint to the body.
-    body.Joint = joint;
-    
-    % Add the body to the robot:
-    % For the first body, attach it to the base.
-    % For subsequent bodies, attach to the previous body.
-    if i == 1
-        addBody(robot, body, robot.BaseName);
-    else
-        addBody(robot, body, sprintf("body%d", i-1));
-    end
-end
-
-% Display the robot structure.
-showdetails(robot);
-
-% Set joint limits for the prismatic joint (which is link 1 in our SerialLink)
-robot.getBody("body2").Joint.PositionLimits = [0, 1];
+robot.getBody("body2").Joint.PositionLimits = [0, 10];
+robot.getBody("body6").Joint.PositionLimits = [-1, 0];
 
 % % Visualize the robot in its home configuration.
 % figure;
