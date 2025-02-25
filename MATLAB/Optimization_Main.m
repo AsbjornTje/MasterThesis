@@ -8,14 +8,14 @@ dhparams_full = [
        0     -pi/2    -0.306      0;
        0     -pi/2   10      0;
        0      pi/2   0.108     0;
-       0     -pi/2   0.061     0;
+       0     -pi/2   0.2     0;
        0      0     1.37     pi/2; %change this cylinder diameter to 0.061
-       0.097    0     0     0; % and this one
-       0     -pi/2    0.5    0; %min 0.194 max 0.6
-       0      pi/2    0.1     0; %min 0.81 max 0.15
-       0     -pi/2    0.5    0; %min 0.14 max 0.6
-       0      pi/2    0.1    0; %min 0.081 max 0.15
-       0        0      0.5    0; % min 0.14 max 0.6
+       0.2    0     0     0; % and this one
+       0     -pi/2    0.2    0; %min 0.194 max 0.6
+       0      pi/2    0.2     0; %min 0.81 max 0.15
+       0     -pi/2    0.2    0; %min 0.14 max 0.6
+       0      pi/2    0.2    0; %min 0.081 max 0.15
+       0        0      0.2    0; % min 0.14 max 0.6
 ];
 
 % Define joint types and home configuration
@@ -27,7 +27,7 @@ q_home = [0 0 0 0 0 0 0 0 0];
 
 
 % Create a rigidBodyTree robot model.
-robot = createRobotModel_Generalized(dhparams_full, jointTypes, q_home)
+robot = createRobotCollisionModel(dhparams_full, jointTypes, q_home)
 
 robot.getBody("body2").Joint.PositionLimits = [0, 10];
 robot.getBody("body6").Joint.PositionLimits = [-1, 0];
@@ -45,7 +45,7 @@ jointLimits = [
     -pi, pi;
 ];
 
-% gui = interactiveRigidBodyTree(robot,"Configuration",q_home)
+% show(robot,q_home,"collisions","on")
 % 
 % % Wait for user input
 % disp('Press Enter to move to the first pose...');
@@ -54,32 +54,49 @@ jointLimits = [
 % Define goal poses
 goalPoses = [
     -0.476, 2.015, -1.400, 1, 0, 0, -pi;  % Front BLM
+    -0.476, 6.400, -1.200, 1, 0, 0, -pi;
     -1.469, 6.921, -1.400, 1, 0, 0, -pi;  % Back BLM
+];
+
+% Define obstacle environment
+collisionCylinders = {
+    collisionCylinder(0.457, 8.0);  % Main Pipe
+    collisionCylinder(0.044, 0.3);  % Front BLM
+    collisionCylinder(0.044, 0.3);   % Back BLM
+    collisionCylinder(0.350, 1.5);  % First Obstacle
+    collisionCylinder(0.350, 1.5)   % Second Obstacle
+};
+
+cylinderPoses = [
+    -0.958, 4.260, -1.707, 1, 0, 0, pi/2; 
+    -0.458, 2.015, -1.627, 1, 0, 0, pi/2;
+    -1.456, 6.921, -1.627, 1, 0, 0, pi/2; 
+    -0.952, 5.400, -0.986, 1, 0, 0, 0;
+    -0.952, 6.900, -0.986, 1, 0, 0, 0
 ];
 
 % Define original variables 
 originalVars = table();
-for i = 7:size(dhparams_full, 1)
-    originalVars.(sprintf('a%d', i)) = dhparams_full(i,1);
-    originalVars.(sprintf('d%d', i)) = dhparams_full(i,3);
-end
+originalVars.a6 = dhparams_full(6,1);
+originalVars.d7 = dhparams_full(7,3);
+originalVars.d8 = dhparams_full(8,3);
+originalVars.d9 = dhparams_full(9,3);
+originalVars.d10 = dhparams_full(10,3);
+originalVars.d11 = dhparams_full(11,3);
 
 % Define optimization variables
-optVars = [];
-for i = 7:size(dhparams_full, 1)
-    a_var = optimizableVariable(sprintf('a%d', i), [0, 0.2], 'Type', 'real');
-    d_var = optimizableVariable(sprintf('d%d', i), [0.2, 1], 'Type', 'real');
-    optVars = [optVars, a_var, d_var];
-end
+optVars = [ optimizableVariable('a6', [0.2, 0.3], 'Type', 'real'), ...
+            optimizableVariable('d7', [0.2, 0.9], 'Type', 'real'), ...
+            optimizableVariable('d8', [0.2, 0.3], 'Type', 'real'), ...
+            optimizableVariable('d9', [0.2, 0.9], 'Type', 'real'), ...
+            optimizableVariable('d10', [0.2, 0.3], 'Type', 'real'), ...
+            optimizableVariable('d11', [0.2, 0.9], 'Type', 'real')];
 
 objFcn = @(x) ObjectiveFcn_Collision(x, dhparams_full, jointTypes, goalPoses, q_home);
 
-% Define stopping thresholds
-threshold_obj = 0.1 + 0.05; % translation + rotation threshold
-
 %% Run Bayesian Optimization
 results = bayesopt(objFcn, optVars, ...
-    'MaxObjectiveEvaluations', 50, ...
+    'MaxObjectiveEvaluations', 25, ...
     'IsObjectiveDeterministic', true, ...
     'AcquisitionFunctionName', 'expected-improvement-plus', ...
     'Verbose', 1 ...
@@ -94,13 +111,15 @@ disp(bestVars);
 
 %% Update DH parameters using optimized design variables
 dhparams_opt = dhparams_full;
-for i = 7:size(dhparams_full, 1)
-    dhparams_opt(i,1) = bestVars.(sprintf('a%d', i));
-    dhparams_opt(i,3) = bestVars.(sprintf('d%d', i));
-end
+dhparams_opt(6,1)  = bestVars.a6;
+dhparams_opt(7,3)  = bestVars.d7;
+dhparams_opt(8,3)  = bestVars.d8;
+dhparams_opt(9,3)  = bestVars.d9;
+dhparams_opt(10,3) = bestVars.d10;
+dhparams_opt(11,3) = bestVars.d11;
 
 % Create the optimized robot model
-robot_opt = createRobotModel_Generalized(dhparams_opt, jointTypes, q_home);
+robot_opt = createRobotCollisionModel(dhparams_opt, jointTypes, q_home);
 
 robot_opt.getBody("body2").Joint.PositionLimits = [0, 10];
 robot_opt.getBody("body6").Joint.PositionLimits = [-1, 0];
@@ -108,43 +127,31 @@ robot_opt.getBody("body6").Joint.PositionLimits = [-1, 0];
 % setup visualisation
 figure;
 ax = axes;
-show(robot_opt, q_home, 'collisions', 'on', 'Parent', ax);
+show(robot_opt, q_home, "Collisions", "on", 'Parent', ax);
 title(ax, 'Optimized Robot - Home Configuration');
 view(ax, 3);
 axis(ax, [-3 3 -2 10 -3 1]);
 hold(ax, 'on');
 
-% Add Collsion objects
-collisionCylinders = {
-    collisionCylinder(0.457, 8.0),  % Main Pipe
-    collisionCylinder(0.044, 0.3),  % Front BLM
-    collisionCylinder(0.044, 0.3)   % Back BLM
-};
-
-cylinderPoses = [
-    -0.958, 4.260, -1.707, 1, 0, 0, pi/2; 
-    -0.458, 2.015, -1.627, 1, 0, 0, pi/2;
-    -1.456, 6.921, -1.627, 1, 0, 0, pi/2; 
-];
-
+% Plot collision objects on the same axes
 for i = 1:length(collisionCylinders)
     P = trvec2tform(cylinderPoses(i, 1:3));
     R = axang2tform(cylinderPoses(i, 4:7));
     collisionCylinders{i}.Pose = P * R;
-    show(collisionCylinders{i});
+    show(collisionCylinders{i}, 'Parent', ax);
 end
 
-% Plot goal poses
+% Plot goal poses on the same axes
 for i = 1:size(goalPoses, 1)
     pos = goalPoses(i, 1:3);
     rot = goalPoses(i, 4:7);
     poseTF = trvec2tform(pos) * axang2tform(rot);
-    plotTransforms(pos, tform2quat(poseTF), "FrameSize", 0.1);
-    text(pos(1), pos(2), pos(3), sprintf('Pose %d', i), 'FontSize', 10, 'Color', 'r');
+    plotTransforms(pos, tform2quat(poseTF), 'FrameSize', 0.1, 'Parent', ax);
+    text(ax, pos(1), pos(2), pos(3), sprintf('Pose %d', i), 'FontSize', 10, 'Color', 'r');
 end
 
 % Wait for user input
-disp('Press Enter to move to the first pose...');
+disp('Press any key to start path planning...');
 pause;
 
 %Set up 
@@ -154,25 +161,65 @@ gik = generalizedInverseKinematics('RigidBodyTree', robot_opt, ...
 jointBounds = constraintJointBounds(robot_opt);
 jointBounds.Bounds = jointLimits;
 
-q_guess = q_home;  % initialize initial guess
+planner = manipulatorRRT(robot_opt,collisionCylinders);
+planner.SkippedSelfCollisions = 'parent';
+planner.EnableConnectHeuristic = false;
+planner.MaxConnectionDistance = 0.1;
+planner.ValidationDistance = 0.01;
+planner.MaxIterations = 10000;
+rng(0)
+
+q_guess = q_home;  % Start from the home configuration
 
 for i = 1:size(goalPoses, 1)
-    % Define pose constraint for current goal pose.
+    % Define the pose constraint for the current goal pose.
     poseTgt = constraintPoseTarget(robot_opt.BodyNames{end});
     poseTgt.TargetTransform = trvec2tform(goalPoses(i, 1:3)) * axang2tform(goalPoses(i, 4:7));
     
     % Solve the constrained IK problem using the current guess.
     [q_sol, solInfo] = gik(q_guess, poseTgt, jointBounds);
     
-    % Update the initial guess for the next iteration.
+    % If IK fails, you may wish to handle that (e.g., skip this pose or add a penalty).
+    if solInfo.Status ~= "success"
+        warning('IK failed for goal %d. Skipping trajectory planning for this goal.', i);
+        q_guess = q_sol;  % update guess and continue
+        continue;
+    end
+
+    % Pre-check the goal configuration for collision.
+    if checkCollision(robot_opt, q_sol, collisionCylinders, 'SkippedSelfCollision', 'parent')
+        warning('Goal configuration for pose %d is in collision. Skipping trajectory planning for this goal.', i);
+        q_guess = q_sol;
+        continue;
+    end
+    
+    % Plan a collision-free trajectory using the planner object.
+    try
+        collisionFreePath = planner.plan(q_guess, q_sol);
+    catch ME
+        warning('RRT planning failed for goal %d: %s', i, ME.message);
+        collisionFreePath = [];
+    end
+    
+    if isempty(collisionFreePath)
+        warning('No collision-free path found for pose %d.', i);
+    else
+        % Animate the collision-free trajectory and check for collisions with obstacles.
+        for j = 1:size(collisionFreePath, 1)
+            q_traj = collisionFreePath(j,:);
+            if checkCollision(robot_opt, q_traj, collisionCylinders, 'SkippedSelfCollision', 'parent')
+                warning('Collision detected along trajectory at configuration %d for pose %d.', j, i);
+            end
+            show(robot_opt, q_traj, 'collisions', 'on', 'Parent', ax, 'PreservePlot', false);
+            title(ax, sprintf('Moving to Goal Pose %d', i));
+            drawnow;
+            pause(0.05);
+        end
+    end
+    
+    % Update the starting configuration for the next segment.
     q_guess = q_sol;
     
-    % Update robot display.
-    show(robot_opt, q_sol, 'collisions', 'on', 'Parent', ax, 'PreservePlot', false);
-    title(ax, sprintf('Optimized Robot - Goal Pose %d', i));
-    drawnow;
-    
-    % Wait for user input.
     disp('Press Enter to move to the next pose...');
     pause;
 end

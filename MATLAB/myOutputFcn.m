@@ -1,6 +1,6 @@
 function stop = myOutputFcn(results, state)
     % Define the threshold 
-    threshold_obj = 1.3;  
+    threshold_obj = 500;  
     stop = false;
     if strcmp(state, 'iteration')
         % Check if the minimum objective value is below the threshold
