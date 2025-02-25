@@ -31,21 +31,22 @@ function objective = ObjectiveFcn_Collision(x, dhparams_full, jointTypes, goalPo
     robot.getBody("body2").Joint.PositionLimits = [0, 10];
     robot.getBody("body6").Joint.PositionLimits = [-1, 0];
 
-  % Define obstacle environment
+    % Define obstacle environment
     collisionCylinders = {
-    collisionCylinder(0.457, 8.0);  % Main Pipe
-    collisionCylinder(0.044, 0.3);  % Front BLM
-    collisionCylinder(0.044, 0.3);   % Back BLM
-    collisionCylinder(0.350, 1.5);  % First Obstacle
-    collisionCylinder(0.350, 1.5)   % Second Obstacle
+    collisionCylinder(0.457, 8.0)...  % Main Pipe
+    collisionCylinder(0.044, 0.3)...  % Front BLM
+    collisionCylinder(0.044, 0.3)...   % Back BLM
+    collisionCylinder(0.350, 1.5)...  % First Obstacle
+    collisionCylinder(0.350, 1.5)...   % Second Obstacle
     };
+
 
     cylinderPoses = [
     -0.958, 4.260, -1.707, 1, 0, 0, pi/2; 
     -0.458, 2.015, -1.627, 1, 0, 0, pi/2;
     -1.456, 6.921, -1.627, 1, 0, 0, pi/2; 
-    -0.952, 5.400, -0.986, 1, 0, 0, 0;
-    -0.952, 6.900, -0.986, 1, 0, 0, 0
+    -0.952, 5.400, -0.6, 1, 0, 0, 0;
+    -0.952, 6.900, -0.6, 1, 0, 0, 0
     ];
 
     for i = 1:length(collisionCylinders)

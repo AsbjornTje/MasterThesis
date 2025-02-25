@@ -135,10 +135,8 @@ axis(ax, [-3 3 -2 10 -3 1]);
 hold(ax, 'on');
 
 % Plot collision objects on the same axes
-for i = 1:length(collisionCylinders)
-    show(collisionCylinders{i}, 'Parent', ax);
-end
 
+    show(collisionCylinders{i}, 'Parent', ax);
 
 % Plot goal poses on the same axes
 for i = 1:size(goalPoses, 1)
