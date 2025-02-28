@@ -62,10 +62,11 @@ function objective = ObjectiveFcn_Collision(x, dhparams_full, jointTypes, goalPo
 
     planner = manipulatorRRT(robot,collisionCylinders);
     planner.SkippedSelfCollisions = 'parent';
-    planner.EnableConnectHeuristic = false;
+    planner.EnableConnectHeuristic = true;
     planner.MaxConnectionDistance = 0.1;
     planner.ValidationDistance = 0.01;
     planner.MaxIterations = 10000;
+    planner.WorkspaceGoalRegionBias = 0.5;
     rng(0)
  
     % Initialize accumulators for pose error and penalties.
@@ -80,7 +81,7 @@ function objective = ObjectiveFcn_Collision(x, dhparams_full, jointTypes, goalPo
     [isSelfColliding, selfSeparationDist, selfWitnessPts] = checkCollision(robot,q_guess, collisionCylinders, 'SkippedSelfCollisions','parent');
     bodynames = [robot.BodyNames robot.Base.Name];
     %collTable = array2table(selfSeparationDist,VariableNames=bodynames,RowNames=bodynames)
-
+        
     %show(robot,q_guess, "Collisions","on");
    
     % % Wait for user input
@@ -102,16 +103,21 @@ function objective = ObjectiveFcn_Collision(x, dhparams_full, jointTypes, goalPo
         poseTgt = constraintPoseTarget(robot.BodyNames{end});
         poseTgt.TargetTransform = T_goal;
         
+        % Define a goal reagion
+        goalRegion = workspaceGoalRegion(robot.BodyNames{end});
+        goalRegion.ReferencePose = T_goal;
+        goalRegion.Bounds(4,:) = [-pi pi];
+
         % Solve the constrained IK problem using the current guess.
         [q_sol, solInfo] = gik(q_guess, poseTgt, jointBounds);
-        
+
         % If IK fails, add a penalty.
         if solInfo.Status ~= "success"
             totalPenalty = totalPenalty + IKPenaltyValue;
         end
         
         try
-            rrtPath = planner.plan(q_guess, q_sol);
+            rrtPath = planner.plan(q_guess, goalRegion);
         catch ME
             warning('RRT planning failed: %s', ME.identifier, '%s', ME.message);
             rrtPath = [];

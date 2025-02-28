@@ -59,13 +59,7 @@ goalPoses = [
 ];
 
 % Define obstacle environment
-collisionCylinders = {
-    collisionCylinder(0.457, 8.0);  % Main Pipe
-    collisionCylinder(0.044, 0.3);  % Front BLM
-    collisionCylinder(0.044, 0.3);   % Back BLM
-    collisionCylinder(0.350, 1.5);  % First Obstacle
-    collisionCylinder(0.350, 1.5)   % Second Obstacle
-};
+collisionCylinders = {collisionCylinder(0.457, 8.0) collisionCylinder(0.044, 0.3) collisionCylinder(0.044, 0.3) collisionCylinder(0.350, 1.5)  collisionCylinder(0.350, 1.5)};
 
 cylinderPoses = [
     -0.958, 4.260, -1.707, 1, 0, 0, pi/2; 
@@ -85,18 +79,18 @@ originalVars.d10 = dhparams_full(10,3);
 originalVars.d11 = dhparams_full(11,3);
 
 % Define optimization variables
-optVars = [ optimizableVariable('a6', [0.2, 0.3], 'Type', 'real'), ...
-            optimizableVariable('d7', [0.2, 0.9], 'Type', 'real'), ...
-            optimizableVariable('d8', [0.2, 0.3], 'Type', 'real'), ...
-            optimizableVariable('d9', [0.2, 0.9], 'Type', 'real'), ...
-            optimizableVariable('d10', [0.2, 0.3], 'Type', 'real'), ...
-            optimizableVariable('d11', [0.2, 0.9], 'Type', 'real')];
+optVars = [ optimizableVariable('a6', [0.2, 1.0], 'Type', 'real'), ...
+            optimizableVariable('d7', [0.2, 1.0], 'Type', 'real'), ...
+            optimizableVariable('d8', [0.2, 1.0], 'Type', 'real'), ...
+            optimizableVariable('d9', [0.2, 1.0], 'Type', 'real'), ...
+            optimizableVariable('d10', [0.2, 1.0], 'Type', 'real'), ...
+            optimizableVariable('d11', [0.2, 1.0], 'Type', 'real')];
 
 objFcn = @(x) ObjectiveFcn_Collision(x, dhparams_full, jointTypes, goalPoses, q_home);
 
 %% Run Bayesian Optimization
 results = bayesopt(objFcn, optVars, ...
-    'MaxObjectiveEvaluations', 25, ...
+    'MaxObjectiveEvaluations', 10, ...
     'IsObjectiveDeterministic', true, ...
     'AcquisitionFunctionName', 'expected-improvement-plus', ...
     'Verbose', 1 ...
@@ -163,10 +157,11 @@ jointBounds.Bounds = jointLimits;
 
 planner = manipulatorRRT(robot_opt,collisionCylinders);
 planner.SkippedSelfCollisions = 'parent';
-planner.EnableConnectHeuristic = false;
+planner.EnableConnectHeuristic = true;
 planner.MaxConnectionDistance = 0.1;
 planner.ValidationDistance = 0.01;
 planner.MaxIterations = 10000;
+planner.WorkspaceGoalRegionBias = 0.5;
 rng(0)
 
 q_guess = q_home;  % Start from the home configuration
@@ -176,6 +171,11 @@ for i = 1:size(goalPoses, 1)
     poseTgt = constraintPoseTarget(robot_opt.BodyNames{end});
     poseTgt.TargetTransform = trvec2tform(goalPoses(i, 1:3)) * axang2tform(goalPoses(i, 4:7));
     
+    % Define a goal reagion
+    goalRegion = workspaceGoalRegion(robot_opt.BodyNames{end});
+    goalRegion.ReferencePose = poseTgt.TargetTransform;
+    goalRegion.Bounds(4,:) = [-pi pi];   
+
     % Solve the constrained IK problem using the current guess.
     [q_sol, solInfo] = gik(q_guess, poseTgt, jointBounds);
     
@@ -195,7 +195,7 @@ for i = 1:size(goalPoses, 1)
     
     % Plan a collision-free trajectory using the planner object.
     try
-        collisionFreePath = planner.plan(q_guess, q_sol);
+        collisionFreePath = planner.plan(q_guess, goalRegion);
     catch ME
         warning('RRT planning failed for goal %d: %s', i, ME.message);
         collisionFreePath = [];
