@@ -65,8 +65,8 @@ function objective = ObjectiveFcn_Collision(x, dhparams_full, jointTypes, goalPo
     planner = manipulatorRRT(robot,collisionCylinders);
     planner.SkippedSelfCollisions = 'parent';
     planner.EnableConnectHeuristic = false;
-    planner.MaxConnectionDistance = 0.1;
-    planner.ValidationDistance = 0.01;
+    planner.MaxConnectionDistance = 0.5;
+    planner.ValidationDistance = 0.005;
     planner.MaxIterations = 10000;
     rng(0)
  

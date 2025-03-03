@@ -27,6 +27,7 @@ numBodies = numJoints; % number of bodies equals number of DH rows
 
 % Loop over bodies starting from 3 (skip the base attached to "base")
 for i = 3:numBodies
+    
     if i == 5 || 6
         r = 0.061;
     end

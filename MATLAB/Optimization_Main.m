@@ -83,18 +83,18 @@ originalVars.d10 = dhparams_full(10,3);
 originalVars.d11 = dhparams_full(11,3);
 
 % Define optimization variables
-optVars = [ optimizableVariable('a6', [0.2, 0.3], 'Type', 'real'), ...
-            optimizableVariable('d7', [0.2, 0.5], 'Type', 'real'), ...
-            optimizableVariable('d8', [0.2, 0.3], 'Type', 'real'), ...
-            optimizableVariable('d9', [0.2, 0.5], 'Type', 'real'), ...
-            optimizableVariable('d10', [0.2, 0.3], 'Type', 'real'), ...
-            optimizableVariable('d11', [0.2, 0.5], 'Type', 'real')];
+optVars = [ optimizableVariable('a6', [0.2, 0.25], 'Type', 'real'), ...
+            optimizableVariable('d7', [0.2, 0.6], 'Type', 'real'), ...
+            optimizableVariable('d8', [0.2, 0.25], 'Type', 'real'), ...
+            optimizableVariable('d9', [0.2, 0.6], 'Type', 'real'), ...
+            optimizableVariable('d10', [0.2, 0.25], 'Type', 'real'), ...
+            optimizableVariable('d11', [0.2, 0.4], 'Type', 'real')];
 
 objFcn = @(x) ObjectiveFcn_Collision(x, dhparams_full, jointTypes, goalPoses, q_home);
 
 %% Run Bayesian Optimization
 results = bayesopt(objFcn, optVars, ...
-    'MaxObjectiveEvaluations', 70, ...
+    'MaxObjectiveEvaluations', 700, ...
     'IsObjectiveDeterministic', true, ...
     'PlotFcn','all', ...
     'AcquisitionFunctionName', 'expected-improvement-plus', ...
@@ -166,11 +166,13 @@ jointBounds.Bounds = jointLimits;
 planner = manipulatorRRT(robot_opt,collisionCylinders);
 planner.SkippedSelfCollisions = 'parent';
 planner.EnableConnectHeuristic = false;
-planner.MaxConnectionDistance = 0.1;
-planner.ValidationDistance = 0.01;
+planner.MaxConnectionDistance = 0.5;
+planner.ValidationDistance = 0.005;
 planner.MaxIterations = 10000;
 rng(0)
 
+v = VideoWriter("trajectory.avi");
+v.FrameRate = 30;
 q_guess = q_home;  % Start from the home configuration
 
 for i = 1:size(goalPoses, 1)
@@ -206,6 +208,7 @@ for i = 1:size(goalPoses, 1)
     if isempty(collisionFreePath)
         warning('No collision-free path found for pose %d.', i);
     else
+        open(v);        
         % Animate the collision-free trajectory and check for collisions with obstacles.
         for j = 1:size(collisionFreePath, 1)
             q_traj = collisionFreePath(j,:);
@@ -215,6 +218,8 @@ for i = 1:size(goalPoses, 1)
             show(robot_opt, q_traj, 'collisions', 'on', 'Parent', ax, 'PreservePlot', false);
             title(ax, sprintf('Moving to Goal Pose %d', i));
             drawnow;
+            frame = getframe(gcf);
+            writeVideo(v, frame);
             pause(0.05);
         end
     end
@@ -222,9 +227,12 @@ for i = 1:size(goalPoses, 1)
     % Update the starting configuration for the next segment.
     q_guess = q_sol;
     
+    pause(2);
     disp('Press Enter to move to the next pose...');
     pause;
 end
+
+ close(v);
 
 close all;
 clear all;
