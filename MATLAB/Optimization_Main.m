@@ -50,6 +50,7 @@ jointLimits = [
 % % Wait for user input
 % disp('Press Enter to move to the first pose...');
 % pause;
+% close all;
 
 % Define goal poses
 goalPoses = [
@@ -128,7 +129,7 @@ robot_opt.getBody("body6").Joint.PositionLimits = [-1, 0];
 robot_opt.getBody("body6").Joint.HomePosition = -0.5;
 q_home = homeConfiguration(robot_opt);
 
-% setup visualisationl
+% setup visualisation
 figure;
 ax = axes;
 show(robot_opt, q_home, "Collisions", "on", 'Parent', ax);
@@ -136,6 +137,10 @@ title(ax, 'Optimized Robot - Home Configuration');
 view(ax, 3);
 axis(ax, [-3 3 -2 10 -3 1]);
 hold(ax, 'on');
+
+% % Wait for user input
+% disp('Press any key to start path planning...');
+% pause;
 
 % Plot collision objects on the same axes
 for i = 1:length(collisionCylinders)
