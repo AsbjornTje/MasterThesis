@@ -25,7 +25,7 @@ end
 collisionData = struct();
 
 %% Add Collision and Visual Objects
-defaultRadius = 0.055;  % default link radius
+defaultRadius = 0.07;  % default link radius
 numBodies = numJoints; % number of bodies equals number of DH rows
 
 % Loop over bodies starting from 3 (skip the base attached to "base")
@@ -95,11 +95,8 @@ for i = 3:numBodies
             addVisual(robot.getBody(currentName), "Cylinder", [r, h_d], T_d);
             data_d.Radius = r;
             data_d.Length = h_d;
-            if d_val < 0
-                data_d.Pose = T_d * trvec2tform([0, 0, d_val/2]);
-            else
-                data_d.Pose = T_d * inv(trvec2tform([0, 0, d_val/2]));
-            end
+            if 
+            data_d.Pose = T_d * inv(trvec2tform([0, 0, d_val/2]));
             collisionDataCell{end+1} = data_d;
         end
         if h_a > 0
@@ -109,7 +106,7 @@ for i = 3:numBodies
             addVisual(robot.getBody(currentName), "Cylinder", [r, h_a], T_a);
             data_a.Radius = r;
             data_a.Length = h_a;
-            data_a.Pose = T_a * inv(trvec2tform([0, 0, h_a/2]));
+            data_a.Pose = T_a;
             collisionDataCell{end+1} = data_a;
         end
     end
