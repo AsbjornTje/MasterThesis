@@ -92,7 +92,7 @@ function objective = ObjectiveFcn_Full(x, dhparams_full, jointTypes, goalPoses, 
     rollJointIndex10 = 7;
 
     % Define full 360° range in increments.
-    rollStep = deg2rad(10);
+    rollStep = deg2rad(5);
     rollRange = -pi:rollStep:pi;  % 360° sweep.
 
     % Loop over candidate roll angles.
@@ -109,7 +109,9 @@ function objective = ObjectiveFcn_Full(x, dhparams_full, jointTypes, goalPoses, 
             volumeCandidate = 1000*(volX + volY + volZ);
 
             if checkCollision(robot, q_candidate, 'SkippedSelfCollisions', skiplist)
-                volumeCandidate = volumeCandidate + collisionPenaltyValue;
+                volumeCandidate = collisionPenaltyValue;
+                %volumeCandidate = volumeCandidate + collisionPenaltyValue;
+                %disp('Collision detected in volume candidate!')
             end
             
             if volumeCandidate < sum_volume
@@ -121,7 +123,7 @@ function objective = ObjectiveFcn_Full(x, dhparams_full, jointTypes, goalPoses, 
         %disp(volumeCandidate);
     end
     
-    if sum_volume > 2.5
+    if sum_volume > 2.2
         sum_volume = sum_volume + collisionPenaltyValue;
         disp('volume candidate above threshold!')
     end
@@ -250,7 +252,8 @@ function objective = ObjectiveFcn_Full(x, dhparams_full, jointTypes, goalPoses, 
     trajectoryWeight = 1;
 
     % Final objective combines design cost and penalties.
-    objective = penaltyWeight * volumeCandidate + designWeight * sum_design + volumeWeight * sum_volume + trajectoryWeight * trajectoryObjective;
+    objective = designWeight * sum_design + volumeWeight * sum_volume + trajectoryWeight * trajectoryObjective;
+    %objective = penaltyWeight * volumeCandidate + designWeight * sum_design + volumeWeight * sum_volume + trajectoryWeight * trajectoryObjective;
 
     candidateStruct.q_candidate = bestCandidateLocal;
     candidateStruct.value = objective;  % Use full objective, not isolated metric!

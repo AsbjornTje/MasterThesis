@@ -91,34 +91,6 @@ collisionCylinders{3}.Pose = trvec2tform([-1.456, 6.921, -1.627]) * axang2tform(
 collisionCylinders{4}.Pose = trvec2tform([-0.952, 5.400, -0.6]) * axang2tform([1, 0, 0, 0]);
 collisionCylinders{5}.Pose = trvec2tform([-0.952, 6.900, -0.6]) * axang2tform([1, 0, 0, 0]);
 
-% figure;
-% ax = axes;
-% show(robot, q_home, "Collisions", "on", 'Parent', ax);
-% title(ax, 'Optimized Robot - Home Configuration');
-% view(ax, 3);
-% axis(ax, [-3 3 -2 10 -3 1]);
-% hold(ax, 'on');
-% show(goalRegion);
-% 
-% % Plot collision objects on the same axes
-% for i = 1:length(collisionCylinders)
-%     show(collisionCylinders{i}, 'Parent', ax);
-% end
-% 
-% % Plot goal poses on the same axes
-% for i = 1:size(goalPoses, 1)
-%     pos = goalPoses(i, 1:3);
-%     rot = goalPoses(i, 4:7);
-%     poseTF = trvec2tform(pos) * axang2tform(rot);
-%     plotTransforms(pos, tform2quat(poseTF), 'FrameSize', 0.1, 'Parent', ax);
-%     text(ax, pos(1), pos(2), pos(3), sprintf('Pose %d', i), 'FontSize', 10, 'Color', 'r');
-% end
-% 
-% % Wait for user input
-% disp('Press Enter to start optimization process...');
-% pause;
-% close all;
-
 % Define original variables 
 originalVars = table();
 originalVars.a6 = dhparams_full(6,1);
@@ -132,11 +104,11 @@ originalVars.d12 = dhparams_full(12,3);
 % Define optimization variables
 optVars = [ optimizableVariable('a6', [0.1, 0.2], 'Type', 'real'), ...
             optimizableVariable('d7', [-0.2, 0.2], 'Type', 'real'), ...
-            optimizableVariable('d8', [0.3, 0.6], 'Type', 'real'), ...
+            optimizableVariable('d8', [0.48, 0.8], 'Type', 'real'), ...
             optimizableVariable('d9', [0.081, 0.15], 'Type', 'real'), ...
-            optimizableVariable('d10', [0.3, 0.6], 'Type', 'real'), ...
+            optimizableVariable('d10', [0.243, 0.8], 'Type', 'real'), ...
             optimizableVariable('d11', [0.081, 0.15], 'Type', 'real'), ...
-            optimizableVariable('d12', [0.3, 0.5], 'Type', 'real')];
+            optimizableVariable('d12', [0.36, 0.8], 'Type', 'real')];
 
 % objFcn = @(x) ObjectiveFcn_Collision(x, dhparams_full, jointTypes, goalPoses, q_home);
 %objFcn = @(x) ObjectiveFcn_Fold(x, dhparams_full, jointTypes, goalRegion, q_home, dq);
@@ -145,7 +117,7 @@ objFcn = @(x) ObjectiveFcn_Full(x, dhparams_full, jointTypes,goalPoses, goalRegi
 %% Run Bayesian Optimization     'UseParallel', true, ...
 %% IF not starting then check objective function if debug is on!
 results = bayesopt(objFcn, optVars, ...
-    'MaxObjectiveEvaluations', 300, ...
+    'MaxObjectiveEvaluations', 200, ...
     'UseParallel', true, ...
     'IsObjectiveDeterministic', true, ...
     'PlotFcn','all', ...
