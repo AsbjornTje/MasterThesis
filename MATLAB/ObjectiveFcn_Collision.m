@@ -30,6 +30,8 @@ function objective = ObjectiveFcn_Collision(x, dhparams_full, jointTypes, goalPo
     ];
     robot.getBody("body2").Joint.PositionLimits = [0, 10];
     robot.getBody("body6").Joint.PositionLimits = [-1, 0];
+    robot.getBody("body6").Joint.HomePosition = -0.5;
+    q_home = homeConfiguration(robot);
 
     % Define obstacle environment
     collisionCylinders = {
@@ -39,7 +41,6 @@ function objective = ObjectiveFcn_Collision(x, dhparams_full, jointTypes, goalPo
     collisionCylinder(0.350, 1.5)...  % First Obstacle
     collisionCylinder(0.350, 1.5)...   % Second Obstacle
     };
-
 
     cylinderPoses = [
     -0.958, 4.260, -1.707, 1, 0, 0, pi/2; 
@@ -64,8 +65,8 @@ function objective = ObjectiveFcn_Collision(x, dhparams_full, jointTypes, goalPo
     planner = manipulatorRRT(robot,collisionCylinders);
     planner.SkippedSelfCollisions = 'parent';
     planner.EnableConnectHeuristic = false;
-    planner.MaxConnectionDistance = 0.1;
-    planner.ValidationDistance = 0.01;
+    planner.MaxConnectionDistance = 0.5;
+    planner.ValidationDistance = 0.005;
     planner.MaxIterations = 10000;
     rng(0)
  
