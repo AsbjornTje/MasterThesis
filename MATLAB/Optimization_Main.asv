@@ -299,7 +299,7 @@ robot_opt.getBody("body2").Joint.PositionLimits = [0,10];
 robot_opt.getBody("body6").Joint.PositionLimits = [-1, 0];
 % robot_opt.getBody("body6").Joint.HomePosition = 0;
 
-q_home = [0 0 0 -0.9 0 0 0 0 0];%homeConfiguration(robot_opt);
+q_home = [0 pi/2 pi/2 -0.9 0 pi 0 pi 0];%homeConfiguration(robot_opt);
 
 % setup visualisation
 figure;

@@ -1,0 +1,125 @@
+function plotDHtoVolume(results, dhparams_full, jointTypes, goalRegion, q_home)
+% plotDHtoVolume   Sensitivity‐sweep of each DH var → protruding volume
+%
+% plotDHtoVolume(results, dhparams_full, jointTypes, goalRegion, q_home)
+%
+% • results       : BayesianOptimization results object
+% • dhparams_full : your full DH‐table template
+% • jointTypes    : cell array of joint type strings
+% • goalRegion    : your workspace goal region
+% • q_home        : home configuration for createRobotCollisionModel
+%
+% Produces a 3×7 figure: rows = volX, volY, volZ; cols = a6,d7…d12
+
+    % 1) Pull best‐found point
+    best = results.XAtMinObjective;  % table with columns a6,d7…d12
+
+    vars = {'a6','d7','d8','d9','d10','d11','d12'};
+    nVars = numel(vars);
+    nPts  = 50;   % resolution of sweep
+
+    % 2) Preallocate storage
+    volX = nan(nVars, nPts);
+    volY = nan(nVars, nPts);
+    volZ = nan(nVars, nPts);
+    grids = cell(nVars,1);
+
+    % 3) For each var do a sweep
+    for k = 1:nVars
+        varName = vars{k};
+        % lookup its allowed [min max]
+        vds   = results.VariableDescriptions;
+        names = {vds.Name};
+        idx   = find(strcmp(names,varName),1);
+        range = vds(idx).Range;
+        grid  = linspace(range(1), range(2), nPts);
+        grids{k} = grid;
+
+        for i = 1:nPts
+            % build DH table at this sweep point:
+            dh = dhparams_full;
+            for j = 1:nVars
+                nm = vars{j};
+                if j==k
+                    val = grid(i);
+                else
+                    val = best.(nm);
+                end
+                switch nm
+                  case 'a6',  dh(6,1)  = val;
+                  case 'd7',  dh(7,3)  = val;
+                  case 'd8',  dh(8,3)  = val;
+                  case 'd9',  dh(9,3)  = val;
+                  case 'd10', dh(10,3) = val;
+                  case 'd11', dh(11,3) = val;
+                  case 'd12', dh(12,3) = val;
+                end
+            end
+
+            % rebuild robot & collisionData
+            [robot, collisionData] = createRobotCollisionModel(dh, jointTypes, q_home);
+
+            % rebuild skiplist
+            adj = [robot.Base.Name, robot.BodyNames];
+            skiplist = cell(robot.NumBodies,2);
+            for m = 1:robot.NumBodies
+                skiplist(m,:) = {adj{m}, adj{m+1}};
+            end
+            skiplist(end+1,:) = {'body6','body8'};
+
+            % fixed folded posture
+            q_fold = [0 pi/2 pi/2 -0.7 0 pi 0 pi 0];
+
+            % scan roll‐angles (coarse)
+            bestSum = inf;
+            bestVX = 0; bestVY = 0; bestVZ = 0;
+            rollIdx8  = 5;
+            rollIdx10 = 7;
+            step = deg2rad(30);  % coarser for speed
+            for r8 = -pi:step:pi
+              for r10 = -pi:step:pi
+                q = q_fold;
+                q(rollIdx8)  = r8;
+                q(rollIdx10) = r10;
+                [vX,vY,vZ] = Protruding_Volume(robot, collisionData, q, goalRegion, 1000, false);
+                s = vX + vY + vZ;
+                if s < bestSum
+                  bestSum = s;
+                  bestVX = vX;
+                  bestVY = vY;
+                  bestVZ = vZ;
+                end
+              end
+            end
+
+            volX(k,i) = bestVX;
+            volY(k,i) = bestVY;
+            volZ(k,i) = bestVZ;
+        end
+    end
+
+    % 4) Plot all 3×7 panels
+    figure('Name','DH Sensitivity','NumberTitle','off');
+    for k = 1:nVars
+        % X‐volume
+        subplot(3,nVars,k);
+        plot(grids{k}, volX(k,:), 'LineWidth',1.5);
+        xlabel(vars{k}); ylabel('vol_X');
+        title(sprintf('%s → X', vars{k}));
+        grid on;
+
+        % Y‐volume
+        subplot(3,nVars,nVars + k);
+        plot(grids{k}, volY(k,:), 'LineWidth',1.5);
+        xlabel(vars{k}); ylabel('vol_Y');
+        title(sprintf('%s → Y', vars{k}));
+        grid on;
+
+        % Z‐volume
+        subplot(3,nVars,2*nVars + k);
+        plot(grids{k}, volZ(k,:), 'LineWidth',1.5);
+        xlabel(vars{k}); ylabel('vol_Z');
+        title(sprintf('%s → Z', vars{k}));
+        grid on;
+    end
+end
