@@ -25,15 +25,15 @@ end
 collisionData = struct();
 
 %% Add Collision and Visual Objects
-defaultRadius = 0.055;  % default link radius
+defaultRadius = 0.075;  % default link radius
 numBodies = numJoints; % number of bodies equals number of DH rows
 
-% Loop over bodies starting from 3 (skip the base attached to "base")
+% Loop over bodies starting from 3 
 for i = 3:numBodies
     % Set radius based on body index.
     if ismember(i, [5,6])
         r = 0.061;
-    elseif ismember(i, [10, 11, 12])
+    elseif ismember(i, [9, 10, 11, 12])
         r = 0.055;
     else
         r = defaultRadius;

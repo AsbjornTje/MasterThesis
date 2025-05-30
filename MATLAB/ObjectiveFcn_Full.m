@@ -1,8 +1,10 @@
 function objective = ObjectiveFcn_Full(x, dhparams_full, jointTypes, goalPoses, goalRegion, q_home, dq)
     
-    %Disable annoying warning
+    %Disable annoying warnings
     warning('off','robotics:robotmanip:joint:ResettingHomePosition');
+    warning('off', 'all');
 
+    disp(' ');
     global bestCandidateGlobal bestCandidateObj dq
 
     % Update DH parameters using optimized variables
@@ -11,22 +13,28 @@ function objective = ObjectiveFcn_Full(x, dhparams_full, jointTypes, goalPoses, 
     dhparams_opt(7,3)  = x.d7;
     dhparams_opt(8,3)  = x.d8;
     dhparams_opt(9,3)  = x.d9;
-    dhparams_opt(10,3)  = x.d10;
+    dhparams_opt(10,3) = x.d10;
     dhparams_opt(11,3) = x.d11;
     dhparams_opt(12,3) = x.d12;
     
     % Accumulate design cost:
-    sum_design = abs(x.a6) + abs(x.d7) + abs(x.d8) + abs(x.d9) + abs(x.d10) + abs(x.d11) + abs(x.d12);
+    sum_design = abs(x.d8) + abs(x.d10) + abs(x.d12);
+    %sum_design = abs(x.a6) + abs(x.d7) + abs(x.d8) + abs(x.d9) + abs(x.d10) + abs(x.d11) + abs(x.d12);
+    %sum_design = abs(x.d10);
     sum_volume = inf; %This guarantees the first candidate is better than starting value
     bestCandidateLocal = [];  % temporary best candidate for evaluation
+    bestRollCollisionPenalty = inf;
+    bestJ8 = 0;
+    bestJ10 = 0;
 
     % Define a penalty values for collision or planning failure.
     totalPoseError = 0;
-    totalPenalty   = 0;
-    collisionPenaltyValue = 1000; 
+    total_reachabilityPenalty   = 0;
+    collisionPenaltyValue = 40; 
         
     % Initialize accumulators for penalties.
     volumeCandidate = 0;
+    foldingMotion = 0;
     
     % Create the robot model using updated DH parameters.
     [robot, collisionData]= createRobotCollisionModel(dhparams_opt, jointTypes, q_home);
@@ -58,13 +66,14 @@ function objective = ObjectiveFcn_Full(x, dhparams_full, jointTypes, goalPoses, 
     planner_fold.MaxIterations = 10000;
     rng(0);
 
-    if x.d8 < 0.4
-        baseCandidate = q_fold1;
-    else
-        baseCandidate = q_fold2;
-    end
-    disp(x.d8)
-    disp(baseCandidate)
+    % if x.d8 < 0.4
+    %     baseCandidate = q_fold1;
+    % else
+    %     baseCandidate = q_fold2;
+    % end
+    % disp(x.d8)
+    baseCandidate = q_fold2;
+    %disp(baseCandidate)
     
     %Attempt to reach the folded configuration without self collisions
     try
@@ -75,68 +84,102 @@ function objective = ObjectiveFcn_Full(x, dhparams_full, jointTypes, goalPoses, 
     end
         
     if isempty(rrtPath)
-        volumeCandidate = volumeCandidate + collisionPenaltyValue;
+        foldingMotion = foldingMotion + collisionPenaltyValue;
     else
         % Optionally, check each configuration along the path for collisions.
         for j = 1:size(rrtPath, 1)
             q_path = rrtPath(j, :);
             if checkCollision(robot, q_path ,'SkippedSelfCollisions', skiplist)
-                volumeCandidate = volumeCandidate + collisionPenaltyValue;
+                foldingMotion = foldingMotion + collisionPenaltyValue;
                 break;
             end
         end
     end 
+    disp('folding motion penalty: ')
+    disp(foldingMotion);
 
     % Assume the roll joints to be varied are for body 8 and 10 .
     rollJointIndex8 = 5;
     rollJointIndex10 = 7;
 
     % Define full 360° range in increments.
-    rollStep = deg2rad(5);
+    rollStep = deg2rad(3);
     rollRange = -pi:rollStep:pi;  % 360° sweep.
+    
+    %% TEST
+    % Initialize “best of each class”
+    bestFreeVol     = inf;
+    bestFreeCand    = [];
+    bestCollideVol  = inf;
+    bestCollideCand = [];
+    penVal          = collisionPenaltyValue;
 
-    % Loop over candidate roll angles.
+    % Sweep all roll angles
     for r8 = rollRange
-        for r10 = rollRange
-            q_candidate = baseCandidate;
-            q_candidate(rollJointIndex8) = r8;
-            q_candidate(rollJointIndex10) = r10;
-
-            % Evaluate extruding volume penalty. 
-            %% NB!!!! 
-            %% USE FALSE WHEN NOT TESTING TO AVOID GETTING STUCK IN VIZUALIZATION LOOP!!!!
-            [volX, volY, volZ] = Protruding_Volume(robot, collisionData, q_candidate, goalRegion, 1000, false);
-            volumeCandidate = 1000*(volX + volY + volZ);
-
-            if checkCollision(robot, q_candidate, 'SkippedSelfCollisions', skiplist)
-                volumeCandidate = collisionPenaltyValue;
-                %volumeCandidate = volumeCandidate + collisionPenaltyValue;
-                %disp('Collision detected in volume candidate!')
-            end
-            
-            if volumeCandidate < sum_volume
-                sum_volume = volumeCandidate;
-                bestCandidateLocal = q_candidate;
-            end
+      for r10 = rollRange
+        q_candidate = baseCandidate;
+        q_candidate(rollJointIndex8)  = r8;
+        q_candidate(rollJointIndex10) = r10;
+    
+        % compute protrusion volume
+        [volX,volY,volZ]   = Protruding_Volume(robot, collisionData, q_candidate, goalRegion, 5000, false);
+        volumeCandidate    = 1000*(volX+volY+volZ);
+    
+        % check collision
+        isColliding = checkCollision(robot, q_candidate, 'SkippedSelfCollisions', skiplist);
+    
+        if ~isColliding
+          % collision‐free branch
+          if volumeCandidate < bestFreeVol
+            bestFreeVol  = volumeCandidate;
+            bestFreeCand = q_candidate;
+            bestJ8 = r8;
+            bestJ10 = r10;
+          end
+        else
+          % colliding branch
+          if volumeCandidate < bestCollideVol
+            bestCollideVol  = volumeCandidate;
+            bestCollideCand = q_candidate;
+            bestJ8 = r8;
+            bestJ10 = r10;
+          end
         end
-        %disp("volumeCandidate value:")
-        %disp(volumeCandidate);
+      end
     end
     
-    if sum_volume > 2.2
-        sum_volume = sum_volume + collisionPenaltyValue;
-        disp('volume candidate above threshold!')
+    % Decide final “best” and penalty
+    if ~isempty(bestFreeCand)
+      % we found at least one collision-free config
+      sum_volume               = bestFreeVol;
+      bestCandidateLocal       = bestFreeCand;
+      bestminRollCollisionPenalty = 0;
+    else
+      % all options collided: pick the best of them
+      sum_volume               = bestCollideVol;
+      bestCandidateLocal       = bestCollideCand;
+      bestminRollCollisionPenalty = penVal;
     end
 
-    if checkCollision(robot, bestCandidateLocal, 'SkippedSelfCollisions', skiplist)
-        disp('Self collision in volume candidate!')
-    end
-
-    %disp(bestCandidateLocal)
-    % Send candidate info to the DataQueue.
-    %send(dq, struct('q_candidate', bestCandidateLocal, 'value', sum_volume));
+    disp('bestminRollCollisionPenalty:');
+    disp(bestminRollCollisionPenalty);
+    fprintf('sum_volume: %.4f', sum_volume);
     
-    %%BLM MEASUREMENT PART
+    threshold = 2.2;    % your volume limit
+    penaltyWeight = 10;     % how severe the penalty per unit over the limit
+    
+    % compute how far you are above the threshold
+    excess = max(0, sum_volume - threshold);
+    
+    % add a **linear** penalty proportional to that excess
+    sum_volume = sum_volume + penaltyWeight * excess;
+    
+    % optional: show if you’re over
+    if excess > 0
+        fprintf('  exceeded threshold by %.3f → +%.3f penalty\n', excess, penaltyWeight*excess);
+    end  
+   
+    %% BLM MEASUREMENT PART
 
     % Define obstacle environment (collision cylinders)
     collisionCylinders = {
@@ -197,7 +240,7 @@ function objective = ObjectiveFcn_Full(x, dhparams_full, jointTypes, goalPoses, 
 
     numGoals = size(goalPoses,1);
     q_guess = q_home;
-    IKPenaltyValue = 1000;
+    IKPenaltyValue = 50;
 
     for i = 1:numGoals
         % For each goal pose, set up the pose constraint and solve IK.
@@ -209,7 +252,7 @@ function objective = ObjectiveFcn_Full(x, dhparams_full, jointTypes, goalPoses, 
         [q_sol, solInfo] = gik(q_guess, poseTgt, jointBounds);
 
         if solInfo.Status ~= "success"
-            totalPenalty = totalPenalty + IKPenaltyValue;
+            total_reachabilityPenalty = total_reachabilityPenalty + IKPenaltyValue;
             disp('ik failed!!')
         end
         try
@@ -218,13 +261,13 @@ function objective = ObjectiveFcn_Full(x, dhparams_full, jointTypes, goalPoses, 
             rrtPath = [];
         end
         if isempty(rrtPath)
-            totalPenalty = totalPenalty + collisionPenaltyValue;
+            total_reachabilityPenalty = total_reachabilityPenalty + collisionPenaltyValue;
             disp('No Path found!')
         else
             for j = 1:size(rrtPath,1)
                 q_path = rrtPath(j,:);
                 if checkCollision(robot, q_path, collisionCylinders, 'SkippedSelfCollisions', skiplist)
-                    totalPenalty = totalPenalty + collisionPenaltyValue;
+                    total_reachabilityPenalty = total_reachabilityPenalty + collisionPenaltyValue;
                     disp('Collision in path!')
                     break;
                 end
@@ -240,27 +283,38 @@ function objective = ObjectiveFcn_Full(x, dhparams_full, jointTypes, goalPoses, 
         totalPoseError = totalPoseError + pose_error;
         q_guess = q_sol;
     end
-    trajectoryObjective = totalPoseError + totalPenalty;
-
+    reachability = totalPoseError + total_reachabilityPenalty;
+    foldability = sum_volume + foldingMotion + bestminRollCollisionPenalty;
 
     %%FINAL COMBINATION
 
     % Weights for the different components.
-    penaltyWeight = 1;
-    designWeight  = 1;
-    volumeWeight = 1;
-    trajectoryWeight = 1;
+    designWeight = 4;
+    reachabilityWeight  = 1;
+    foldabilityWeight = 4;
 
     % Final objective combines design cost and penalties.
-    objective = designWeight * sum_design + volumeWeight * sum_volume + trajectoryWeight * trajectoryObjective;
-    %objective = penaltyWeight * volumeCandidate + designWeight * sum_design + volumeWeight * sum_volume + trajectoryWeight * trajectoryObjective;
+    objective = designWeight * sum_design + reachabilityWeight * reachability + foldabilityWeight * foldability;
+    %objective = reachabilityWeight * sum_design + foldabilityWeight * sum_volume + trajectoryWeight * trajectoryObjective;
+    %objective = penaltyWeight * volumeCandidate + reachabilityWeight * sum_design + foldabilityWeight * sum_volume + trajectoryWeight * trajectoryObjective;
 
     candidateStruct.q_candidate = bestCandidateLocal;
     candidateStruct.value = objective;  % Use full objective, not isolated metric!
     
     % Send candidate info to the DataQueue to update the global best candidate.
-    send(dq, candidateStruct);
+     send(dq, struct(...
+      'q_candidate',    bestCandidateLocal, ...
+      'value',          objective, ...
+      'designSum',      designWeight      * sum_design, ...
+      'reachability',   reachabilityWeight* reachability, ...
+      'foldability',    foldabilityWeight * foldability, ...
+      'j8', bestJ8, ...
+      'j10', bestJ10 ...
+    ));
     
-    fprintf('Objective: %.4f, Volume Candidate: %.4f, Design Sum: %.4f\n, Volume Sum: %.4f, Trajectory penalty: %.4f', ...
-            objective, penaltyWeight * volumeCandidate, sum_design, sum_volume, trajectoryObjective);
+    fprintf('Objective: %.4f, Design Sum: %.4f, Reachability: %.4f, Foldability: %.4f\n', ...
+            objective, designWeight * sum_design, reachabilityWeight * reachability, foldabilityWeight * foldability);
+
+    % fprintf('Objective: %.4f, Volume Candidate: %.4f, Design Sum: %.4f\n, Volume Sum: %.4f, Trajectory penalty: %.4f', ...
+    %         objective, penaltyWeight * volumeCandidate, sum_design, sum_volume, trajectoryObjective);
 end

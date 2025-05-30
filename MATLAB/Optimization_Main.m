@@ -3,16 +3,25 @@ clc;
 close all;
 
 %Declare global variables to access during optimization
-global bestCandidateGlobal bestCandidateObj
+global bestCandidateGlobal bestCandidateObj designTrace reachTrace foldTrace j8Trace j10Trace
 bestCandidateGlobal = [];
 bestCandidateObj = inf;
+
+designTrace = [];
+reachTrace  = [];
+foldTrace   = [];
+j8Trace = [];
+j10Trace = [];
 
 % Create a DataQueue and specify a callback function that updates the global best candidate.
 dq = parallel.pool.DataQueue;
 afterEach(dq, @updateBestCandidate);
+afterEach(dq, @recordMetrics);
 
-%Disable annoying warning
+%Disable annoying warnings
 warning('off','robotics:robotmanip:joint:ResettingHomePosition');
+warning('off', 'all');
+
 
 % Specify DH parameters
 dhparams_full = [
@@ -22,13 +31,13 @@ dhparams_full = [
        0      pi/2   0.108     0;
        0     -pi/2   0.2     0;
        0      0     1.37     pi/2; %change this cylinder diameter to 0.061
-       0.2    pi/2     0     0; % and this one
-       0    -pi/2     0.2      0
-       0     -pi/2    0.2    0; %min 0.194 max 0.6
-       0      pi/2    0.2     0; %min 0.81 max 0.15
-       0     -pi/2    0.2    0; %min 0.14 max 0.6
-       0      pi/2    0.2    0; %min 0.081 max 0.15
-       0        0      0.2    0; % min 0.14 max 0.6
+       0.249    pi/2     0     0; % and this one
+       0    -pi/2     -0.015      0
+       0     -pi/2    0.509    0; %min 0.194 max 0.6
+       0      pi/2    0.136     0; %min 0.81 max 0.15
+       0     -pi/2    0.252    0; %min 0.14 max 0.6
+       0      pi/2    0.116    0; %min 0.081 max 0.15
+       0        0      0.424    0; % min 0.14 max 0.6
 ];
 
 % Define joint types and home configuration
@@ -39,6 +48,7 @@ jointTypes = [fix, pris, rev, rev, fix, pris, fix, rev, rev, rev, rev, rev];
 q_home = [0 0 0 0 0 0 0 0 0];
 q_fold1 = [0 pi/2 pi/2 -0.9 0 0 0 pi 0];
 q_fold2 = [0 pi/2 pi/2 -0.9 0 pi 0 pi 0];
+q_test = [0 0 0 0 0 0 0 0 0];
 
 % Create a rigidBodyTree robot model.
 robot = createRobotCollisionModel(dhparams_full, jointTypes, q_home)
@@ -62,12 +72,26 @@ jointLimits = [
 %Define goal region
 goalRegion = workspaceGoalRegion(robot.BodyNames{end});
 goalRegion.ReferencePose = trvec2tform([0 0.466 -0.413]);
-goalRegion.Bounds(1, :) = [-0.08 0.2];    % X Bounds
+goalRegion.Bounds(1, :) = [-0.112 0.16];    % X Bounds
 goalRegion.Bounds(2, :) = [0 1];    % Y Bounds
-goalRegion.Bounds(3, :) = [-0.1 0.1];    % Z Bounds
+goalRegion.Bounds(3, :) = [-0.08 0.114];    % Z Bounds
 goalRegion.Bounds(4, :) = [-0 0];  % Rotation about the X-axis
 goalRegion.Bounds(5, :) = [-0 0];  % Rotation about the Y-axis
 goalRegion.Bounds(6, :) = [-0 0];  % Rotation about the Z-axis
+
+% setup visualisation
+figure;
+ax = axes;
+show(robot, q_test, "Collisions", "on", 'Parent', ax);
+title(ax, 'Optimized Robot - Home Configuration');
+view(ax, 3);
+axis(ax, [-3 3 -2 10 -5 1]);
+hold(ax, 'on');
+hold off;
+
+% Wait for user input
+disp('Press any key to start path planning...');
+pause;
 
 % Define goal poses
 goalPoses = [
@@ -101,8 +125,9 @@ originalVars.d10 = dhparams_full(10,3);
 originalVars.d11 = dhparams_full(11,3);
 originalVars.d12 = dhparams_full(12,3);
 
+
 % Define optimization variables
-optVars = [ optimizableVariable('a6', [0.1, 0.2], 'Type', 'real'), ...
+optVars = [ optimizableVariable('a6', [0.1, 0.25], 'Type', 'real'), ...
             optimizableVariable('d7', [-0.2, 0.2], 'Type', 'real'), ...
             optimizableVariable('d8', [0.48, 0.8], 'Type', 'real'), ...
             optimizableVariable('d9', [0.081, 0.15], 'Type', 'real'), ...
@@ -110,25 +135,93 @@ optVars = [ optimizableVariable('a6', [0.1, 0.2], 'Type', 'real'), ...
             optimizableVariable('d11', [0.081, 0.15], 'Type', 'real'), ...
             optimizableVariable('d12', [0.36, 0.8], 'Type', 'real')];
 
+%optVars = [optimizableVariable('d10', [0.243, 0.8], 'Type', 'real')];
+
 % objFcn = @(x) ObjectiveFcn_Collision(x, dhparams_full, jointTypes, goalPoses, q_home);
 %objFcn = @(x) ObjectiveFcn_Fold(x, dhparams_full, jointTypes, goalRegion, q_home, dq);
 objFcn = @(x) ObjectiveFcn_Full(x, dhparams_full, jointTypes,goalPoses, goalRegion, q_home, dq);
 
+% Choose which parameters to use for convergence heat map
+xvar = 'd12';
+yvar = 'd10';
+
+
 %% Run Bayesian Optimization     'UseParallel', true, ...
 %% IF not starting then check objective function if debug is on!
 results = bayesopt(objFcn, optVars, ...
-    'MaxObjectiveEvaluations', 200, ...
+    'MaxObjectiveEvaluations', 700, ...
     'UseParallel', true, ...
     'IsObjectiveDeterministic', true, ...
-    'PlotFcn','all', ...
+    'PlotFcn',{@plotObjective, @plotMinObjective,@(r,s) plotHeatmap(r,s,xvar,yvar), @plotMetrics}, ...
     'AcquisitionFunctionName', 'expected-improvement-plus', ...
     'Verbose', 2 ...
     );
 
-%Shut down paralell pool
-delete(gcp('nocreate'));
+%%Create new folder for this run
+plotsDir = fullfile(pwd, 'plots');
+if ~exist(plotsDir, 'dir')
+    mkdir(plotsDir);
+end
 
-% Extract best parameters
+% Find existing run directories and determine next run number
+d = dir(fullfile(plotsDir, 'run*'));
+dirs = d([d.isdir]);  % keep only directories
+runNums = [];
+for k = 1:numel(dirs)
+    name = dirs(k).name;
+    % match names of the form 'runN'
+    tok = regexp(name, '^run(\d+)$', 'tokens');
+    if ~isempty(tok)
+        runNums(end+1) = str2double(tok{1}{1});  %#ok<SAGROW>
+    end
+end
+if isempty(runNums)
+    nextRun = 1;
+else
+    nextRun = max(runNums) + 1;
+end
+
+% Make the new run folder
+runFolder = fullfile(plotsDir, sprintf('run%d', nextRun));
+mkdir(runFolder);
+
+% Build full table of all samples and objectives
+Tall = results.XTrace;                            % N×D table of a6…d12
+Tall.objective = results.ObjectiveTrace;          % add the objective column
+
+% Find indices of the 5 best objective values
+[~, idxSort] = sort(Tall.objective, 'ascend');
+top5Idx      = idxSort(1:min(5,height(Tall)));
+
+% Extract top-5 rows
+T5 = Tall(top5Idx, :);  
+
+% Compute design_sum for each confgiuration
+T5.design_sum = abs(T5.d8) + abs(T5.d10) + abs(T5.d12);
+
+% Pull the recorded best‐roll angles from, DataQueue 
+T5.r8  = j8Trace(top5Idx);
+T5.r10 = j10Trace(top5Idx);
+
+% Save the output file
+writetable(T5, fullfile(runFolder,'top5.csv'));
+save(fullfile(runFolder,'top5.mat'), 'T5');
+
+%% plot dh parameters versus protruding volume
+plotParamIsolation(results, dhparams_full, jointTypes, goalRegion, bestCandidateGlobal);
+
+
+%% log-scale convergence plot
+bestObj = cummin(results.ObjectiveTrace);
+
+figure('Name','Objective vs. Iteration (log scale)','NumberTitle','off');
+semilogy(1:numel(bestObj), bestObj,'LineWidth',0.5);
+xlabel('BO Iteration');
+ylabel('Best Objective Value (log scale)');
+title('Convergence of BO (Log Y-Axis)');
+grid on;
+
+%% Extract best parameters
 disp('Original design variables (for joints 6 and up):');
 disp(originalVars);
 bestVars = bestPoint(results);
@@ -152,7 +245,7 @@ disp(dhparams_opt);
 [robot_opt, collisionData] = createRobotCollisionModel(dhparams_opt, jointTypes, q_home);
 
 %check for errors in the model
-showdetails(robot_opt)
+%showdetails(robot_opt)
 
 q_home = homeConfiguration(robot_opt);
 q_fold = bestCandidateGlobal;
@@ -167,6 +260,9 @@ for i = 1:robot_opt.NumBodies
 end
 %add the specific bodies to the skiplist
 skiplist = [skiplist; {'body6','body8'}];
+
+%% Shut down paralell pool
+delete(gcp('nocreate'));
 
 %% Folding test!
 
@@ -203,7 +299,7 @@ robot_opt.getBody("body2").Joint.PositionLimits = [0,10];
 robot_opt.getBody("body6").Joint.PositionLimits = [-1, 0];
 % robot_opt.getBody("body6").Joint.HomePosition = 0;
 
-q_home = homeConfiguration(robot_opt);
+q_home = [0 0 0 -0.9 0 0 0 0 0];%homeConfiguration(robot_opt);
 
 % setup visualisation
 figure;
@@ -228,9 +324,21 @@ for i = 1:size(goalPoses, 1)
     text(ax, pos(1), pos(2), pos(3), sprintf('Pose %d', i), 'FontSize', 10, 'Color', 'r');
 end
 
-% Wait for user input
-disp('Press any key to start path planning...');
-pause;
+%% Save all current figures into this run folder, both .png and interactive .fig
+figs = findall(groot, 'Type', 'figure');
+for f = 1:numel(figs)
+    h = figs(f);
+    name = h.Name;
+    if isempty(name)
+        name = sprintf('fig%d', f);
+    end
+
+    % PNG snapshot
+    %saveas(h, fullfile(runFolder, [name '.png']));
+
+    % Interactive MATLAB figure
+    savefig(h, fullfile(runFolder, [name '.fig']));
+end
 
 %Set up ik solver
 gik = generalizedInverseKinematics('RigidBodyTree', robot_opt, ...
@@ -247,9 +355,16 @@ planner.ValidationDistance = 0.005;
 planner.MaxIterations = 10000;
 rng(0)
 
-v = VideoWriter("trajectory.avi");
+videoFile = fullfile(runFolder, "trajectory.avi");
+v = VideoWriter(videoFile);
 v.FrameRate = 20;
 q_guess = q_home;  % Start from the home configuration
+
+%% Wait for user input
+disp('Ready to record path planning! press any key to start...');
+pause;
+
+open(v);  
 
 for i = 1:size(goalPoses, 1)
     % Define the pose constraint for the current goal pose.
@@ -283,8 +398,7 @@ for i = 1:size(goalPoses, 1)
 
     if isempty(collisionFreePath)
         warning('No collision-free path found for pose %d.', i);
-    else
-        open(v);        
+    else      
         % Animate the collision-free trajectory and check for collisions with obstacles.
         for j = 1:size(collisionFreePath, 1)
             q_traj = collisionFreePath(j,:);
@@ -296,20 +410,23 @@ for i = 1:size(goalPoses, 1)
             drawnow;
             frame = getframe(gcf);
             writeVideo(v, frame);
-            pause(0.05);
+            %pause(0.05);
         end
     end
 
     % Update the starting configuration for the next pose.
     q_guess = q_sol;
 
-    pause(2);
+    %pause(2);
     disp('Press Enter to move to the next pose...');
     pause;
     disp('Moving...')
 end
 
  close(v);
+
+ disp(bestCandidateGlobal);
+ disp(bestCandidateObj);
 
 close all;
 clear all;
@@ -321,6 +438,16 @@ function updateBestCandidate(candidateStruct)
         bestCandidateObj = candidateStruct.value;
         bestCandidateGlobal = candidateStruct.q_candidate;
         fprintf('Best Objective Updated: %.4f\n', bestCandidateObj);
-    end
-    
+    end   
+end
+
+function recordMetrics(s)
+    % s is the struct your objective sends
+    global designTrace reachTrace foldTrace j8Trace j10Trace
+
+    designTrace(end+1,1) = s.designSum;
+    reachTrace (end+1,1) = s.reachability;
+    foldTrace  (end+1,1) = s.foldability;
+    j8Trace    (end+1,1) = s.j8;
+    j10Trace   (end+1,1) = s.j10;
 end
