@@ -289,9 +289,9 @@ function objective = ObjectiveFcn_Full(x, dhparams_full, jointTypes, goalPoses, 
     %%FINAL COMBINATION
 
     % Weights for the different components.
-    designWeight = 1;
+    designWeight = 4;
     reachabilityWeight  = 1;
-    foldabilityWeight = 1;
+    foldabilityWeight = 4;
 
     % Final objective combines design cost and penalties.
     objective = designWeight * sum_design + reachabilityWeight * reachability + foldabilityWeight * foldability;

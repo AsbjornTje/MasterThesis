@@ -31,13 +31,13 @@ dhparams_full = [
        0      pi/2   0.108     0;
        0     -pi/2   0.2     0;
        0      0     1.37     pi/2; %change this cylinder diameter to 0.061
-       0.12    pi/2     0     0; % and this one
-       0    -pi/2     0.12      0
-       0     -pi/2    0.5    0; %min 0.194 max 0.6
-       0      pi/2    0.12     0; %min 0.81 max 0.15
-       0     -pi/2    0.4    0; %min 0.14 max 0.6
-       0      pi/2    0.12    0; %min 0.081 max 0.15
-       0        0      0.4    0; % min 0.14 max 0.6
+       0.249    pi/2     0     0; % and this one
+       0    -pi/2     -0.015      0
+       0     -pi/2    0.509    0; %min 0.194 max 0.6
+       0      pi/2    0.136     0; %min 0.81 max 0.15
+       0     -pi/2    0.252    0; %min 0.14 max 0.6
+       0      pi/2    0.116    0; %min 0.081 max 0.15
+       0        0      0.424    0; % min 0.14 max 0.6
 ];
 
 % Define joint types and home configuration
@@ -48,6 +48,7 @@ jointTypes = [fix, pris, rev, rev, fix, pris, fix, rev, rev, rev, rev, rev];
 q_home = [0 0 0 0 0 0 0 0 0];
 q_fold1 = [0 pi/2 pi/2 -0.9 0 0 0 pi 0];
 q_fold2 = [0 pi/2 pi/2 -0.9 0 pi 0 pi 0];
+q_test = [0 0 0 0 0 0 0 0 0];
 
 % Create a rigidBodyTree robot model.
 robot = createRobotCollisionModel(dhparams_full, jointTypes, q_home)
@@ -78,20 +79,19 @@ goalRegion.Bounds(4, :) = [-0 0];  % Rotation about the X-axis
 goalRegion.Bounds(5, :) = [-0 0];  % Rotation about the Y-axis
 goalRegion.Bounds(6, :) = [-0 0];  % Rotation about the Z-axis
 
-% % setup visualisation
-% figure;
-% ax = axes;
-% show(robot, q_fold1, "Collisions", "on", 'Parent', ax);
-% title(ax, 'Optimized Robot - Home Configuration');
-% view(ax, 3);
-% axis(ax, [-3 3 -2 10 -3 1]);
-% hold(ax, 'on');
-% show(goalRegion);
-% hold off;
-% 
-% % Wait for user input
-% disp('Press any key to start path planning...');
-% pause;
+% setup visualisation
+figure;
+ax = axes;
+show(robot, q_test, "Collisions", "on", 'Parent', ax);
+title(ax, 'Optimized Robot - Home Configuration');
+view(ax, 3);
+axis(ax, [-3 3 -2 10 -5 1]);
+hold(ax, 'on');
+hold off;
+
+% Wait for user input
+disp('Press any key to start path planning...');
+pause;
 
 % Define goal poses
 goalPoses = [
@@ -149,7 +149,7 @@ yvar = 'd10';
 %% Run Bayesian Optimization     'UseParallel', true, ...
 %% IF not starting then check objective function if debug is on!
 results = bayesopt(objFcn, optVars, ...
-    'MaxObjectiveEvaluations', 2000, ...
+    'MaxObjectiveEvaluations', 700, ...
     'UseParallel', true, ...
     'IsObjectiveDeterministic', true, ...
     'PlotFcn',{@plotObjective, @plotMinObjective,@(r,s) plotHeatmap(r,s,xvar,yvar), @plotMetrics}, ...
