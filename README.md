@@ -1,7 +1,7 @@
 ## MasterThesis
 
 Link to Google Drive containing Cern CAD files: https://drive.google.com/file/d/14u344PnX0KQk8O9KSFDlGV54UohiOyTB/view?usp=sharing
-Link to Master thesis describing the project: [Coming soon](https://hvlopen.brage.unit.no/hvlopen-xmlui/handle/11250/3213001)
+Link to Master thesis describing the project: [Thesis](https://hvlopen.brage.unit.no/hvlopen-xmlui/handle/11250/3213001)
 
 ## How to use this repository
 
